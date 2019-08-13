@@ -1,0 +1,9 @@
+{
+  "name": "tabby-monorepo",
+  "version": "0.1.0",
+  "description": "Tabby Monorepo",
+  "repository": "git@github.com:hiendv/vue-meetup-vietnam-2019-talk.git",
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
