@@ -1,0 +1,23 @@
+{
+  "name": "@hiendv/vue-tabs-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hiendv/vue-tabs": "^0.1.0",
+    "core-js": "^2.6.9",
+    "octicons-vue": "^0.18.5",
+    "vue": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "vuePlugins": {
+    "resolveFrom": "../../"
+  }
+}

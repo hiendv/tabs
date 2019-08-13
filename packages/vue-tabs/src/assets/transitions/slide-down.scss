@@ -1,0 +1,13 @@
+.slide-down-enter-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.slide-down-leave-active {
+  transition: opacity 0.15s cubic-bezier(1, 0.5, 0.8, 1), transform 0.15s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-down-enter,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}

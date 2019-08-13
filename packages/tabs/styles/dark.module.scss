@@ -1,0 +1,47 @@
+@import "~@hiendv/bem-sass";
+
+$background-color: #4b6280;
+$color: #fff;
+$color--active: #a3c4e9;
+$border-color: lighten($background-color, 40%);
+$border-color--hover: $color;
+$border-color--active: $color--active;
+
+.tabs {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.items {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  background-color: $background-color;
+}
+
+.item {
+  display: block;
+  padding: .5rem .75rem;
+  text-decoration: none;
+  color: $color;
+  border-bottom: 3px solid $border-color;
+
+  &:hover {
+    border-color: $border-color--hover;
+  }
+
+  @include m("active") {
+    color: $color--active!important;
+    border-color: $border-color--active!important;
+  }
+}
+
+.panel {
+  padding: 1rem;
+  color: darken($color, 20%);
+  background-color: $background-color;
+}

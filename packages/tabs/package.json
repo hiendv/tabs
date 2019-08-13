@@ -1,0 +1,15 @@
+{
+  "name": "@hiendv/tabs",
+  "version": "0.1.0",
+  "module": "dist/es.js",
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@hiendv/bem-sass": "^0.1.0"
+  },
+  "files": [
+    "dist",
+    "styles",
+    "README.md"
+  ]
+}
