@@ -2,7 +2,7 @@
   "name": "tabs-monorepo",
   "version": "0.1.0",
   "description": "Tabs Monorepo",
-  "repository": "git@github.com:hiendv/vue-meetup-vietnam-2019-talk.git",
+  "repository": "git@github.com:hiendv/tabs.git",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
   "private": true,
