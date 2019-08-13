@@ -2,11 +2,11 @@
 Lightweight and flexible tabs component for the web :zap:
 
 ## Features
-[x] Tab definition using template & programmatically
-[x] Octicons support in tab items
-[x] Beautiful modulized themes included
-[ ] Easily accessible navigation with URL
-[ ] Panel placeholder loading
+- [x] Tab definition using template & programmatically
+- [x] Octicons support in tab items
+- [x] Beautiful modulized themes included
+- [ ] Easily accessible navigation with URL **soon**
+- [ ] Panel placeholder loading **soon**
 
 ## Demo
 See [https://hiendv.github.io/vue-meetup-vietnam-2019-talk/](https://hiendv.github.io/vue-meetup-vietnam-2019-talk/)
