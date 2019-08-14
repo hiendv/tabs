@@ -19,4 +19,4 @@ Please check the [Contributing Guidelines](https://github.com/hiendv/tabs/blob/m
 Issues and PRs are welcome !
 
 ## License
-[MIT](./LICENSE) &copy; 2018 Hien Dao <hien.dv.neo@gmail.com>
+[MIT](./LICENSE) &copy; 2019 Hien Dao <hien.dv.neo@gmail.com>
