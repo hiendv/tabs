@@ -1,6 +1,6 @@
 {
   "name": "@hiendv/tabs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "module": "dist/es.js",
   "main": "dist/es.js",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
