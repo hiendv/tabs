@@ -129,7 +129,7 @@ describe('Tabs', () => {
       })
       .then(() => {
         wrapper.findAll('.item').at(1).trigger('click')
-        console.log(wrapper.html())
+        expect(wrapper.html()).toMatchSnapshot()
       })
   })
 })
