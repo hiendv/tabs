@@ -57,7 +57,8 @@
     "prebuild": "$npm_execpath run lint",
     "prewatch": "$npm_execpath run clean",
     "prebuild:vue": "$npm_execpath run lint",
-    "test": "jest --no-cache"
+    "test": "jest --no-cache",
+    "test-ci": "$npm_execpath run build && $npm_execpath run test -- --coverage --ci --maxWorkers=4"
   },
   "jest": {
     "collectCoverageFrom": [
