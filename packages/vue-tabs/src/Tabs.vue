@@ -6,7 +6,7 @@
           v-for="(props, index) in slotProps" :key="index"
           :class="[theme.item, isActive(index) ? theme['item--active'] : '']" href="#"
           @click.prevent="active = index"
-        ><octicon :icon="props.icon" v-if="props.icon.attrs()"></octicon> {{ props.title }}</a>
+        ><octicon v-if="props.icon.attrs()" :icon="props.icon" /> {{ props.title }}</a>
       </nav>
     </slot>
     <transition
