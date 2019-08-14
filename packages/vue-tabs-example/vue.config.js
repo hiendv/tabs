@@ -12,5 +12,6 @@ module.exports = {
         options.cache = false
         return options
       })
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production' && process.env.GH_PAGES ? '/tabs' : ''
 }
