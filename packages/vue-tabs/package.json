@@ -5,6 +5,9 @@
   "module": "dist/es.js",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@hiendv/tabs": "^0.1.1",
     "octicons-vue": "^0.18.5"

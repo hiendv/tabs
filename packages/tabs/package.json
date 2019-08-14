@@ -5,6 +5,9 @@
   "main": "dist/es.js",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@hiendv/bem-sass": "^0.1.0"
   },
