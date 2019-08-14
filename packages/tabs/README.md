@@ -1,5 +1,5 @@
 # @hiendv/tabs
-Utilities & themes for Tabs components
+Utilities & themes for @hiendv/vue-tabs & @hiendv/react-tabs
 
 ## Installation & Usage
 ### CDN
@@ -23,3 +23,11 @@ The package is mostly consumed by internal Vue & React components. Everything is
 import { styleDefault, styleDark } from '@hiendv/vue-tabs'
 console.log(styleDefault, styleDark)
 ```
+
+Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete demonstration.
+
+## Development & Testing
+Please check the [Contributing Guidelines](https://github.com/hiendv/tabs/blob/master/CONTRIBUTING.md).
+
+## Contribution
+Issues and PRs are welcome !

@@ -60,3 +60,56 @@ new Vue({
   </tabs>
 </template>
 ```
+Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete demonstration.
+
+## Documentation
+### Tabs
+#### Props
+```js
+{
+  // Theme from @hiendv/tabs. Default: styleDefault
+  theme: {
+    type: Object,
+    default () {
+      return styleDefault
+    }
+  }
+}
+```
+#### Methods
+```js
+{
+  // Load slots manually
+  loadSlots () {}
+}
+```
+### Tab
+#### Props
+```js
+{
+  // Tab title. Default: 'Title'
+  title: {
+    type: String,
+    default () {
+      return 'Title'
+    }
+  },
+
+  // Tab title octicon from octicons-vue. Default: Empty
+  icon: {
+    type: Object,
+    default () {
+      return {
+        attrs () {},
+        path () {}
+      }
+    }
+  }
+}
+```
+
+## Development & Testing
+Please check the [Contributing Guidelines](https://github.com/hiendv/tabs/blob/master/CONTRIBUTING.md).
+
+## Contribution
+Issues and PRs are welcome !
