@@ -1,5 +1,6 @@
 import path from 'path'
 import postcss from 'rollup-plugin-postcss'
+import buble from 'rollup-plugin-buble'
 
 const reslv = p => {
   return path.resolve(__dirname, p)
@@ -21,6 +22,6 @@ export default [
       format: 'iife',
       file: reslv('dist/iife.js')
     },
-    plugins: [postcss()]
+    plugins: [postcss(), buble()]
   }
 ]
