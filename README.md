@@ -6,13 +6,11 @@ Lightweight and flexible tabs component for the web.
 ## Packages
 | Package | Version |
 |--------|-------|
-| **[vue-tabs](/packages/tabs)** | [![npm](https://img.shields.io/npm/v/@hiendv/tabs.svg)](https://www.npmjs.com/package/@hiendv/tabs) |
+| **[tabs](/packages/tabs)** | [![npm](https://img.shields.io/npm/v/@hiendv/tabs.svg)](https://www.npmjs.com/package/@hiendv/tabs) |
 | **[vue-tabs](/packages/vue-tabs)** | [![npm](https://img.shields.io/npm/v/@hiendv/vue-tabs.svg)](https://www.npmjs.com/package/@hiendv/vue-tabs) |
 | **[vue-tabs-example](/packages/vue-tabs-example)** | Vue.js example |
 | **[react-tabs](#)** | Coming soon |
 | **[react-tabs-example](#)** | Coming soon |
-
-## Roadmap
 
 ## Development & Testing
 Please check the [Contributing Guidelines](https://github.com/hiendv/tabs/blob/master/CONTRIBUTING.md).
