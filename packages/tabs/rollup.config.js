@@ -7,7 +7,7 @@ const reslv = p => {
 
 export default [
   {
-    input: reslv('src/main.js'),
+    input: reslv('src/index.js'),
     output: {
       format: 'es',
       file: reslv('dist/es.js')
@@ -15,7 +15,7 @@ export default [
     external: id => /\.scss$/.test(id)
   },
   {
-    input: reslv('src/main.js'),
+    input: reslv('src/index.js'),
     output: {
       name: 'tabs',
       format: 'iife',
