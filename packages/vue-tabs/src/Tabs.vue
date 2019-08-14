@@ -80,7 +80,7 @@ export default {
       return false
     },
     loadSlots () {
-      this.slots = this.$slots.default
+      this.slots = this.$slots.default || []
     }
   }
 }
