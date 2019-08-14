@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/config-lerna-scopes": "^8.1.0",
@@ -15,11 +16,17 @@
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
     "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.8.0",
     "core-js": "^2.6.9",
     "eslint": "^6.1.0",
     "eslint-plugin-vue": "^5.2.3",
     "flatted": "^2.0.1",
     "husky": "^3.0.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-serializer-vue": "^2.0.2",
     "lerna": "^3.16.4",
     "octicons-vue": "^0.18.5",
     "rimraf": "^2.6.3",
@@ -30,6 +37,7 @@
     "rollup-plugin-vue": "^5.0.1",
     "sass-loader": "^7.2.0",
     "vue": "^2.6.10",
+    "vue-jest": "^3.0.4",
     "vue-template-compiler": "^2.6.10"
   },
   "husky": {
@@ -45,6 +53,29 @@
     "lint": "eslint --ext .js,.vue,.jsx packages/* --fix",
     "prewatch": "$npm_execpath run clean",
     "serve:vue": "lerna exec --scope @hiendv/vue-tabs-example -- vue-cli-service serve",
-    "build:vue": "lerna exec --scope @hiendv/vue-tabs-example -- vue-cli-service build"
+    "build:vue": "lerna exec --scope @hiendv/vue-tabs-example -- vue-cli-service build",
+    "test": "jest --no-cache"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "packages/**/src/**/*.{js,vue}",
+      "!packages/*-example/src/**/*"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.vue$": "vue-jest"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "moduleNameMapper": {
+      "^@hiendv\\/tabs": "<rootDir>/packages/tabs/src",
+      "\\.(scss)$": "identity-obj-proxy"
+    },
+    "testURL": "http://localhost"
   }
 }
