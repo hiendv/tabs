@@ -51,9 +51,11 @@
     "build": "lerna exec --parallel --ignore @hiendv/*-example -- rollup -c --environment BUILD:production",
     "watch": "lerna exec --parallel --ignore @hiendv/*-example -- rollup -c -w",
     "lint": "eslint --ext .js,.vue,.jsx packages/* --fix",
-    "prewatch": "$npm_execpath run clean",
     "serve:vue": "lerna exec --scope @hiendv/vue-tabs-example -- vue-cli-service serve",
     "build:vue": "lerna exec --scope @hiendv/vue-tabs-example -- vue-cli-service build",
+    "prebuild": "$npm_execpath run lint",
+    "prewatch": "$npm_execpath run clean",
+    "prebuild:vue": "$npm_execpath run lint",
     "test": "jest --no-cache"
   },
   "jest": {
