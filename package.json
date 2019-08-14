@@ -76,7 +76,6 @@
       "jest-serializer-vue"
     ],
     "moduleNameMapper": {
-      "^@hiendv\\/tabs": "<rootDir>/packages/tabs/src",
       "\\.(scss)$": "identity-obj-proxy"
     },
     "testURL": "http://localhost"
