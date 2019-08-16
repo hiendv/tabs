@@ -1,6 +1,6 @@
 <template>
   <div :class="theme.tabs">
-    <slot :slots="slotProps" name="items">
+    <slot name="items">
       <nav :class="theme.items">
         <a
           v-for="(props, index) in slotProps" :key="index"
