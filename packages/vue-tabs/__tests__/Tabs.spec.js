@@ -1,43 +1,28 @@
-import Vue from 'vue'
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import Tab from '../src/Tab.js'
 import Tabs from '../src/Tabs.vue'
 
-const fakeMount = (component, options, children) => {
-  let App = Vue.extend({
-    render (h) {
-      return h(component, options, children(h))
-    }
-  })
+let localVue = null
 
-  return mount(App).find(component)
-}
+beforeAll(() => {
+  localVue = createLocalVue()
+  localVue.component('tab', Tab)
+})
+
+afterAll(() => {
+  localVue = null
+})
 
 describe('Tabs', () => {
   it('renders', () => {
-    const wrapper = fakeMount(Tabs, {}, h => {
-      return [
-        h(Tab, {
-          props: {
-            title: 'One'
-          },
-          scopedSlots: {
-            default () {
-              return h('div', {}, 'One Content')
-            }
-          }
-        }),
-        h(Tab, {
-          props: {
-            title: 'Two'
-          },
-          scopedSlots: {
-            default () {
-              return h('div', {}, 'Two Content')
-            }
-          }
-        })
-      ]
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+        `
+      },
+      localVue
     })
 
     return wrapper.vm.$nextTick()
@@ -47,8 +32,8 @@ describe('Tabs', () => {
   })
 
   it('renders with theme', () => {
-    const wrapper = fakeMount(Tabs, {
-      props: {
+    const wrapper = mount(Tabs, {
+      propsData: {
         theme: {
           tabs: 'one',
           items: 'two',
@@ -56,30 +41,14 @@ describe('Tabs', () => {
           'item--active': 'three--active',
           panel: 'four'
         }
-      }
-    }, h => {
-      return [
-        h(Tab, {
-          props: {
-            title: 'One'
-          },
-          scopedSlots: {
-            default () {
-              return h('div', {}, 'One Content')
-            }
-          }
-        }),
-        h(Tab, {
-          props: {
-            title: 'Two'
-          },
-          scopedSlots: {
-            default () {
-              return h('div', {}, 'Two Content')
-            }
-          }
-        })
-      ]
+      },
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+        `
+      },
+      localVue
     })
 
     return wrapper.vm.$nextTick()
@@ -98,36 +67,19 @@ describe('Tabs', () => {
   })
 
   it('renders correct panels', () => {
-    const wrapper = fakeMount(Tabs, {}, h => {
-      return [
-        h(Tab, {
-          props: {
-            title: 'One'
-          },
-          scopedSlots: {
-            default () {
-              return h('div', {}, 'One Content')
-            }
-          }
-        }),
-        h(Tab, {
-          props: {
-            title: 'Two'
-          },
-          scopedSlots: {
-            default () {
-              return h('div', {}, 'Two Content')
-            }
-          }
-        })
-      ]
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+        `
+      },
+      localVue
     })
 
     return wrapper.vm.$nextTick()
       .then(() => {
         expect(wrapper.html()).toMatchSnapshot()
-      })
-      .then(() => {
         wrapper.findAll('.item').at(1).trigger('click')
         expect(wrapper.html()).toMatchSnapshot()
       })
