@@ -44,13 +44,14 @@ export default {
     }
   },
   computed: {
+    validChildren () {
+      return this.slots.filter(vnode => vnode && vnode.fnOptions && vnode.fnOptions.name === 'Tab' && vnode.data)
+    },
     slotProps () {
-      return this.slots
-        .filter(vnode => vnode && vnode.fnOptions && vnode.fnOptions.name === 'Tab' && vnode.data)
-        .map(vnode => vnode.data.props)
+      return this.validChildren.map(vnode => vnode.data.props)
     },
     panels () {
-      return this.slots.map(slot => slot.children)
+      return this.validChildren.map(vnode => vnode.children)
     },
     activePanel () {
       return this.panels.find((panel, i) => this.isActive(i))
