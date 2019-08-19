@@ -41,6 +41,34 @@
           </tab>
         </tabs>
       </section>
+      <section>
+        <h3>Default with custom navigation</h3>
+        <div style="background-color: #fff; padding: 1rem">
+          <tabs :show.sync="show">
+            <template v-slot:nav="{ items }">
+              <a
+                v-for="(item, index) in items" :key="index"
+                href="#" style="padding: 1rem"
+                @click.prevent="show = index"
+              >{{ item.title }}</a>
+            </template>
+            <tab title="First" :icon="globe">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </tab>
+
+            <tab title="Second" :icon="zap">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </tab>
+
+            <tab title="Third" :icon="beaker">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+              dolore eu fugiat nulla pariatur.
+            </tab>
+          </tabs>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -53,6 +81,11 @@ export default {
   components: {
     Tabs,
     Tab
+  },
+  data () {
+    return {
+      show: 1
+    }
   },
   computed: {
     styleDark () {

@@ -84,4 +84,49 @@ describe('Tabs', () => {
         expect(wrapper.html()).toMatchSnapshot()
       })
   })
+
+  it('renders with custom navigation', () => {
+    const wrapper = mount(Tabs, {
+      propsData: {
+        show: 1
+      },
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+        `
+      },
+      scopedSlots: {
+        nav (props) {
+          return this.$createElement('div', props.items.map((item, index) => {
+            return this.$createElement('a', {
+              key: index,
+              on: {
+                click: e => {
+                  e.preventDefault()
+                  wrapper.setProps({ show: index })
+                }
+              }
+            }, item.title)
+          }))
+        }
+      },
+      localVue
+    })
+
+    return wrapper.vm.$nextTick()
+      .then(() => {
+        expect(wrapper.html()).toMatchSnapshot()
+        expect(wrapper.props()).toMatchObject({
+          show: 1
+        })
+
+        wrapper.find('a').trigger('click')
+
+        expect(wrapper.html()).toMatchSnapshot()
+        expect(wrapper.props()).toMatchObject({
+          show: 0
+        })
+      })
+  })
 })

@@ -33,6 +33,24 @@ exports[`Tabs renders correct panels 2`] = `
 </div>
 `;
 
+exports[`Tabs renders with custom navigation 1`] = `
+<div class="tabs">
+  <div><a>One</a><a>Two</a></div>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>Two Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with custom navigation 2`] = `
+<div class="tabs">
+  <div><a>One</a><a>Two</a></div>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
 exports[`Tabs renders with theme 1`] = `
 <div class="one">
   <nav class="two"><a href="#" class="three three--active">

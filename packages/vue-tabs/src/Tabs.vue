@@ -1,11 +1,11 @@
 <template>
   <div :class="theme.tabs">
-    <slot name="items">
+    <slot name="nav" :items="slotProps">
       <nav :class="theme.items">
         <a
           v-for="(props, index) in slotProps" :key="index"
           :class="[theme.item, isActive(index) ? theme['item--active'] : '']" href="#"
-          @click.prevent="active = index"
+          @click.prevent="setActive(index)"
         ><octicon v-if="props.icon.attrs()" :icon="props.icon" /> {{ props.title }}</a>
       </nav>
     </slot>
@@ -35,6 +35,10 @@ export default {
       default () {
         return styleDefault
       }
+    },
+    show: {
+      type: Number,
+      default: 0
     }
   },
   data () {
@@ -55,6 +59,14 @@ export default {
     },
     activePanel () {
       return this.panels.find((panel, i) => this.isActive(i))
+    }
+  },
+  watch: {
+    show: {
+      immediate: true,
+      handler (val) {
+        this.active = val
+      }
     }
   },
   mounted () {
@@ -79,6 +91,10 @@ export default {
       }
 
       return false
+    },
+    setActive (idx) {
+      this.active = idx
+      this.$emit('update:show', idx)
     },
     loadSlots () {
       this.slots = this.$slots.default || []
