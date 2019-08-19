@@ -25,13 +25,19 @@ describe('Tabs', () => {
       localVue
     })
 
-    return wrapper.vm.$nextTick()
-      .then(() => {
-        expect(wrapper.html()).toMatchSnapshot()
-      })
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
   })
 
-  it('renders with theme', () => {
+  it('renders without slots', () => {
+    const wrapper = mount(Tabs)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('renders with custom theme', () => {
     const wrapper = mount(Tabs, {
       propsData: {
         theme: {
@@ -51,38 +57,7 @@ describe('Tabs', () => {
       localVue
     })
 
-    return wrapper.vm.$nextTick()
-      .then(() => {
-        expect(wrapper.html()).toMatchSnapshot()
-      })
-  })
-
-  it('renders without slots', () => {
-    const wrapper = mount(Tabs)
-
-    return wrapper.vm.$nextTick()
-      .then(() => {
-        expect(wrapper.html()).toMatchSnapshot()
-      })
-  })
-
-  it('renders correct panels', () => {
-    const wrapper = mount(Tabs, {
-      slots: {
-        default: `
-          <tab title="One"><div>One Content</div></tab>
-          <tab title="Two"><div>Two Content</div></tab>
-        `
-      },
-      localVue
-    })
-
-    return wrapper.vm.$nextTick()
-      .then(() => {
-        expect(wrapper.html()).toMatchSnapshot()
-        wrapper.findAll('.item').at(1).trigger('click')
-        expect(wrapper.html()).toMatchSnapshot()
-      })
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders with custom navigation', () => {
@@ -114,19 +89,16 @@ describe('Tabs', () => {
       localVue
     })
 
-    return wrapper.vm.$nextTick()
-      .then(() => {
-        expect(wrapper.html()).toMatchSnapshot()
-        expect(wrapper.props()).toMatchObject({
-          show: 1
-        })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.props()).toMatchObject({
+      show: 1
+    })
 
-        wrapper.find('a').trigger('click')
+    wrapper.find('a').trigger('click')
 
-        expect(wrapper.html()).toMatchSnapshot()
-        expect(wrapper.props()).toMatchObject({
-          show: 0
-        })
-      })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.props()).toMatchObject({
+      show: 0
+    })
   })
 })

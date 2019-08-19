@@ -11,18 +11,7 @@ exports[`Tabs renders 1`] = `
 </div>
 `;
 
-exports[`Tabs renders correct panels 1`] = `
-<div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">
-      <!----> One</a><a href="#" class="item">
-      <!----> Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
-</div>
-`;
-
-exports[`Tabs renders correct panels 2`] = `
+exports[`Tabs renders 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">
       <!----> One</a><a href="#" class="item item--active">
@@ -51,7 +40,7 @@ exports[`Tabs renders with custom navigation 2`] = `
 </div>
 `;
 
-exports[`Tabs renders with theme 1`] = `
+exports[`Tabs renders with custom theme 1`] = `
 <div class="one">
   <nav class="two"><a href="#" class="three three--active">
       <!----> One</a><a href="#" class="three">
