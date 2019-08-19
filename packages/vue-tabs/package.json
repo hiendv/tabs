@@ -1,6 +1,6 @@
 {
   "name": "@hiendv/vue-tabs",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "dist/common.js",
   "module": "dist/es.js",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@hiendv/tabs": "^0.1.2",
+    "@hiendv/tabs": "^0.2.0",
     "octicons-vue": "^0.18.5"
   },
   "files": [
