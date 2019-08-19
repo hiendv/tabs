@@ -69,7 +69,7 @@ export default {
       }
     }
   },
-  mounted () {
+  created () {
     this.loadSlots()
   },
   updated () {
