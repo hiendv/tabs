@@ -73,6 +73,7 @@ export default {
     this.loadSlots()
   },
   updated () {
+    // Because $slots is not reactive we need these below lines for hot-reloading
     if (!this.$slots.default || !this.$slots.default.length) {
       return
     }
@@ -85,16 +86,16 @@ export default {
     this.loadSlots()
   },
   methods: {
-    isActive (idx) {
-      if (idx === this.active) {
+    isActive (index) {
+      if (index === this.active) {
         return true
       }
 
       return false
     },
-    setActive (idx) {
-      this.active = idx
-      this.$emit('update:show', idx)
+    setActive (index) {
+      this.active = index
+      this.$emit('update:show', index)
     },
     loadSlots () {
       this.slots = this.$slots.default || []
