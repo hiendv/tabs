@@ -25,7 +25,7 @@
 </style>
 <script>
 import { Octicon } from 'octicons-vue'
-import { styleDefault } from '@hiendv/tabs'
+import { themeDefault } from '@hiendv/tabs'
 import TabPanel from './TabPanel'
 export default {
   components: { TabPanel, Octicon },
@@ -33,7 +33,7 @@ export default {
     theme: {
       type: Object,
       default () {
-        return styleDefault
+        return themeDefault
       }
     },
     show: {

@@ -27,7 +27,7 @@
       </section>
       <section>
         <h3>Dark</h3>
-        <tabs :theme="styleDark">
+        <tabs :theme="themeDark">
           <tab title="Stranger Things">
             <img src="./assets/fdl.gif" width="100%">
           </tab>
@@ -75,7 +75,7 @@
 
 <script>
 import { globe, zap, beaker } from 'octicons-vue'
-import { Tabs, Tab, styleDark } from '@hiendv/vue-tabs'
+import { Tabs, Tab, themeDark } from '@hiendv/vue-tabs'
 export default {
   name: 'App',
   components: {
@@ -88,8 +88,8 @@ export default {
     }
   },
   computed: {
-    styleDark () {
-      return styleDark
+    themeDark () {
+      return themeDark
     },
     globe () {
       return globe

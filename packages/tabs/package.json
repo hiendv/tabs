@@ -13,7 +13,7 @@
   },
   "files": [
     "dist",
-    "styles",
+    "themes",
     "README.md"
   ]
 }
