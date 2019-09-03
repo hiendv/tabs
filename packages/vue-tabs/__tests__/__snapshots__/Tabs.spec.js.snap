@@ -51,6 +51,28 @@ exports[`Tabs renders with custom theme 1`] = `
 </div>
 `;
 
+exports[`Tabs renders with hashes 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#one" class="item">
+      <!----> One</a><a href="#two" class="item item--active">
+      <!----> Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>Two Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with hashes from vue-router 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#one" class="item item--active">
+      <!----> One</a><a href="#two" class="item">
+      <!----> Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
 exports[`Tabs renders without slots 1`] = `
 <div class="tabs">
   <nav class="items"></nav>

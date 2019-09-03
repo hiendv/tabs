@@ -16,6 +16,10 @@ export default {
           path () {}
         }
       }
+    },
+    hash: {
+      type: String,
+      default: null
     }
   },
   render (h, context) {

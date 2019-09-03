@@ -1,4 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
+import { setHash } from '@hiendv/tabs'
+import VueRouter from 'vue-router'
 import Tab from '../src/Tab.js'
 import Tabs from '../src/Tabs.vue'
 
@@ -100,5 +102,49 @@ describe('Tabs', () => {
     expect(wrapper.props()).toMatchObject({
       show: 0
     })
+  })
+
+  it('renders with hashes', () => {
+    setHash('two')
+
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One" hash="one"><div>One Content</div></tab>
+          <tab title="Two" hash="two"><div>Two Content</div></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+    wrapper.find('a').trigger('click')
+    expect(window.location.hash).toEqual('#one')
+  })
+
+  it('renders with hashes from vue-router', () => {
+    setHash('')
+    localVue.use(VueRouter)
+    const router = new VueRouter()
+
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One" hash="one"><div>One Content</div></tab>
+          <tab title="Two" hash="two"><div>Two Content</div></tab>
+        `
+      },
+      localVue,
+      router
+    })
+
+    expect(window.location.toString()).toEqual('http://localhost/#/')
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.find('a').trigger('click')
+    expect(window.location.toString()).toEqual('http://localhost/#/#one')
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    expect(window.location.toString()).toEqual('http://localhost/#/#two')
   })
 })

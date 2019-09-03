@@ -4,7 +4,7 @@
       <nav :class="theme.items">
         <a
           v-for="(props, index) in slotProps" :key="index"
-          :class="[theme.item, isActive(index) ? theme['item--active'] : '']" href="#"
+          :class="[theme.item, isActive(index) ? theme['item--active'] : '']" :href="`#${props.hash || ''}`"
           @click.prevent="setActive(index)"
         ><octicon v-if="props.icon.attrs()" :icon="props.icon" /> {{ props.title }}</a>
       </nav>
@@ -25,7 +25,7 @@
 </style>
 <script>
 import { Octicon } from 'octicons-vue'
-import { themeDefault } from '@hiendv/tabs'
+import { setHash, themeDefault } from '@hiendv/tabs'
 import TabPanel from './TabPanel'
 export default {
   components: { TabPanel, Octicon },
@@ -59,6 +59,9 @@ export default {
     },
     activePanel () {
       return this.panels.find((panel, i) => this.isActive(i))
+    },
+    currentHash () {
+      return (this.$route ? this.$route.hash : window.location.hash).substring(1)
     }
   },
   watch: {
@@ -71,6 +74,7 @@ export default {
   },
   created () {
     this.loadSlots()
+    this.syncActiveHash()
   },
   updated () {
     // Because $slots is not reactive we need these below lines for hot-reloading
@@ -93,7 +97,32 @@ export default {
 
       return false
     },
+    setHash (index) {
+      const item = this.slotProps[index]
+      if (this.currentHash === item.hash) {
+        return
+      }
+
+      if (this.$route) {
+        this.$router.replace({ hash: item.hash })
+        return
+      }
+
+      setHash(item.hash)
+    },
+    syncActiveHash () {
+      const index = this.slotProps.findIndex(element => {
+        return element.hash === this.currentHash
+      })
+
+      if (index < 0) {
+        return
+      }
+
+      this.setActive(index)
+    },
     setActive (index) {
+      this.setHash(index)
       this.active = index
       this.$emit('update:show', index)
     },
