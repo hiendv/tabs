@@ -27,19 +27,21 @@
       </section>
       <section>
         <h3>Dark</h3>
-        <tabs :theme="themeDark">
-          <tab title="Stranger Things">
-            <img src="./assets/fdl.gif" width="100%">
-          </tab>
+        <div style="background-color: #4b6280; padding: 1rem">
+          <tabs :theme="themeDark">
+            <tab title="Stranger Things">
+              <img src="./assets/fdl.gif" width="100%">
+            </tab>
 
-          <tab title="The Big Bang Theory">
-            <img src="./assets/bzg.gif" width="100%">
-          </tab>
+            <tab title="The Big Bang Theory">
+              <img src="./assets/bzg.gif" width="100%">
+            </tab>
 
-          <tab title="The Punisher">
-            <img src="./assets/p.gif" width="100%">
-          </tab>
-        </tabs>
+            <tab title="The Punisher">
+              <img src="./assets/p.gif" width="100%">
+            </tab>
+          </tabs>
+        </div>
       </section>
       <section>
         <h3>Default with custom navigation</h3>
@@ -77,21 +79,18 @@
               title="Foo" :icon="globe"
               hash="foo"
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
+              The location hash should be <strong>#foo</strong>.
             </tab>
 
             <tab title="Qux" :icon="zap">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat.
+              The location hash should be removed.
             </tab>
 
             <tab
               title="Bar" :icon="beaker"
               hash="bar"
             >
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur.
+              The location hash should be <strong>#bar</strong>.
             </tab>
           </tabs>
         </div>
