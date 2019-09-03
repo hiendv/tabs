@@ -6,7 +6,6 @@ Lightweight and flexible tabs component for the web :zap:
 - [x] Octicons support in tab items
 - [x] Beautiful modulized themes included
 - [x] Easily accessible navigation with URL
-- [ ] Panel placeholder loading **[soon]**
 
 ## Demo
 See [https://hiendv.github.io/tabs](https://hiendv.github.io/tabs)
