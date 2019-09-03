@@ -83,6 +83,14 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
   loadSlots () {}
 }
 ```
+#### Events
+```js
+{
+  // Current active tab
+  'update:show' (index) {}
+}
+```
+
 ### Tab
 #### Props
 ```js
@@ -95,7 +103,7 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
     }
   },
 
-  // Tab title octicon from octicons-vue. Default: Empty
+  // Tab title octicon from octicons-vue. Default: empty
   icon: {
     type: Object,
     default () {
@@ -104,6 +112,12 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
         path () {}
       }
     }
+  },
+
+  // Hash fragment. Default: null
+  hash: {
+    type: String,
+    default: null
   }
 }
 ```
