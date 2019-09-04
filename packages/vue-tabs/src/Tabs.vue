@@ -99,6 +99,10 @@ export default {
     },
     setHash (index) {
       const item = this.slotProps[index]
+      if (!this.currentHash && !item.hash) {
+        return
+      }
+
       if (this.currentHash === item.hash) {
         return
       }
