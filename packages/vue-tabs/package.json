@@ -1,6 +1,6 @@
 {
   "name": "@hiendv/vue-tabs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "dist/common.js",
   "module": "dist/es.js",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
