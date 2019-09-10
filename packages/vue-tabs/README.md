@@ -7,6 +7,7 @@ Lightweight and flexible tabs component for the web :zap:
 - [x] Beautiful modulized themes included
 - [x] Easily accessible navigation with URL
 - [x] Easy tab positioning
+- [x] *Ghost* tabs support
 
 ## Demo
 See [https://hiendv.github.io/tabs](https://hiendv.github.io/tabs)
