@@ -27,10 +27,10 @@ export default {
     }
   },
   render (h, context) {
-    return h(
-      'div',
-      context,
-      context.scopedSlots.default({})
-    )
+    if (!context.scopedSlots.default) {
+      return h('div', context)
+    }
+
+    return h('div', context, context.scopedSlots.default())
   }
 }
