@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Tabs renders <tab> without slots 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">
+      <!----> Title</a><a href="#" class="item">
+      <!----> Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
+</div>
+`;
+
+exports[`Tabs renders <tab> without slots 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item">
+      <!----> Title</a><a href="#" class="item item--active">
+      <!----> Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
+</div>
+`;
+
 exports[`Tabs renders 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">
@@ -18,6 +36,52 @@ exports[`Tabs renders 2`] = `
       <!----> Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>Two Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders end <tab> 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">
+      <!----> One</a><a href="#" class="item item--end">
+      <!----> Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders end <tab> 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item">
+      <!----> One</a><a href="#" class="item item--active item--end">
+      <!----> Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>Two Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders ghost <tab> 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">
+      <!----> One</a><a href="#" class="item">
+      <!----> Two</a><a href="#" class="item">
+      <!----> Ghost</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders ghost <tab> 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">
+      <!----> One</a><a href="#" class="item">
+      <!----> Two</a><a href="#" class="item">
+      <!----> Ghost</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
   </div>
 </div>
 `;

@@ -25,15 +25,14 @@
 
             <tab
               title="Fourth" :icon="flame"
-              end
-            >
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </tab>
+              end ghost
+              @click.prevent="fourth"
+            />
 
-            <tab title="Fifth" :icon="heart">
-              Lorem ipsum dolor sit amet
-            </tab>
+            <tab
+              title="Fifth" :icon="heart"
+              ghost
+            />
           </tabs>
         </div>
       </section>
@@ -143,6 +142,11 @@ export default {
     },
     heart () {
       return heart
+    }
+  },
+  methods: {
+    fourth () {
+      console.log('fourth')
     }
   }
 }

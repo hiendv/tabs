@@ -9,7 +9,8 @@
             [theme['item--active']]: isActive(index),
             [theme['item--end']]: props.end
           }"
-          :href="`#${props.hash || ''}`" @click.prevent="setActive(index)"
+          :href="`#${props.hash || ''}`" @click.prevent="itemClicked(index)"
+          v-on="listeners[index]"
         ><octicon v-if="props.icon.attrs()" :icon="props.icon" /> {{ props.title }}</a>
       </nav>
     </slot>
@@ -61,6 +62,9 @@ export default {
     panels () {
       return this.validChildren.map(vnode => vnode.children)
     },
+    listeners () {
+      return this.validChildren.map(vnode => vnode.data.listeners)
+    },
     activePanel () {
       return this.panels.find((panel, i) => this.isActive(i))
     },
@@ -94,6 +98,14 @@ export default {
     this.loadSlots()
   },
   methods: {
+    itemClicked (index) {
+      const item = this.slotProps[index]
+      if (item.ghost) {
+        return
+      }
+
+      return this.setActive(index)
+    },
     isActive (index) {
       if (index === this.active) {
         return true

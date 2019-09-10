@@ -147,4 +147,59 @@ describe('Tabs', () => {
     wrapper.findAll('.item').at(1).trigger('click')
     expect(window.location.toString()).toEqual('http://localhost/#/#two')
   })
+
+  it('renders <tab> without slots', () => {
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab></tab>
+          <tab title="Two"></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
+  })
+
+  it('renders ghost <tab>', () => {
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+          <tab title="Ghost" ghost></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(2).trigger('click')
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.emitted()['update:show']).toBeFalsy()
+  })
+
+  it('renders end <tab>', () => {
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two" end><div>Two Content</div></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
+  })
 })

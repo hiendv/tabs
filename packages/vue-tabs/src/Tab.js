@@ -24,9 +24,17 @@ export default {
     end: {
       type: Boolean,
       default: false
+    },
+    ghost: {
+      type: Boolean,
+      default: false
     }
   },
   render (h, context) {
+    if (context.props.ghost) {
+      return h('div', context)
+    }
+
     if (!context.scopedSlots.default) {
       return h('div', context)
     }
