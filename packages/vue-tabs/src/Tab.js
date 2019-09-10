@@ -20,6 +20,10 @@ export default {
     hash: {
       type: String,
       default: null
+    },
+    end: {
+      type: Boolean,
+      default: false
     }
   },
   render (h, context) {

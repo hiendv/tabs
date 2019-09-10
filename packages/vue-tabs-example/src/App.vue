@@ -22,6 +22,18 @@
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
               dolore eu fugiat nulla pariatur.
             </tab>
+
+            <tab
+              title="Fourth" :icon="flame"
+              end
+            >
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            </tab>
+
+            <tab title="Fifth" :icon="heart">
+              Lorem ipsum dolor sit amet
+            </tab>
           </tabs>
         </div>
       </section>
@@ -100,7 +112,7 @@
 </template>
 
 <script>
-import { globe, zap, beaker } from 'octicons-vue'
+import { globe, zap, beaker, flame, heart } from 'octicons-vue'
 import { Tabs, Tab, themeDark } from '@hiendv/vue-tabs'
 export default {
   name: 'App',
@@ -125,6 +137,12 @@ export default {
     },
     beaker () {
       return beaker
+    },
+    flame () {
+      return flame
+    },
+    heart () {
+      return heart
     }
   }
 }

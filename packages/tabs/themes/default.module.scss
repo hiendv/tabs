@@ -38,6 +38,11 @@ $border-width: 2px;
     color: $color--active!important;
     border-color: $border-color--active!important;
   }
+
+  @include m("end") {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
 }
 
 .panel {

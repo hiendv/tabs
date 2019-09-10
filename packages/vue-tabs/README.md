@@ -6,6 +6,7 @@ Lightweight and flexible tabs component for the web :zap:
 - [x] Octicons support in tab items
 - [x] Beautiful modulized themes included
 - [x] Easily accessible navigation with URL
+- [x] Easy tab positioning
 
 ## Demo
 See [https://hiendv.github.io/tabs](https://hiendv.github.io/tabs)
@@ -94,7 +95,7 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
 #### Props
 ```js
 {
-  // Tab title. Default: 'Title'
+  // Tab title
   title: {
     type: String,
     default () {
@@ -102,7 +103,7 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
     }
   },
 
-  // Tab title octicon from octicons-vue. Default: empty
+  // Tab title octicon from octicons-vue
   icon: {
     type: Object,
     default () {
@@ -113,10 +114,16 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
     }
   },
 
-  // Hash fragment. Default: null
+  // Hash fragment
   hash: {
     type: String,
     default: null
+  },
+
+  // Position break to the right
+  end: {
+    type: Boolean,
+    default: false
   }
 }
 ```

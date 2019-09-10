@@ -4,8 +4,12 @@
       <nav :class="theme.items">
         <a
           v-for="(props, index) in slotProps" :key="index"
-          :class="[theme.item, isActive(index) ? theme['item--active'] : '']" :href="`#${props.hash || ''}`"
-          @click.prevent="setActive(index)"
+          :class="{
+            [theme.item]: true,
+            [theme['item--active']]: isActive(index),
+            [theme['item--end']]: props.end
+          }"
+          :href="`#${props.hash || ''}`" @click.prevent="setActive(index)"
         ><octicon v-if="props.icon.attrs()" :icon="props.icon" /> {{ props.title }}</a>
       </nav>
     </slot>
