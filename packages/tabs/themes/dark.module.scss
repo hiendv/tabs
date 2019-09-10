@@ -6,6 +6,7 @@ $color--active: #a3c4e9;
 $border-color: lighten($background-color, 40%);
 $border-color--hover: $color;
 $border-color--active: $color--active;
+$border-width: 2px;
 
 .tabs {
   * {
@@ -14,12 +15,12 @@ $border-color--active: $color--active;
 }
 
 .items {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-
+  border-bottom: $border-width solid $border-color;
   background-color: $background-color;
 }
 
@@ -28,7 +29,8 @@ $border-color--active: $color--active;
   padding: .5rem .75rem;
   text-decoration: none;
   color: $color;
-  border-bottom: 3px solid $border-color;
+  border-bottom: $border-width solid $border-color;
+  margin-bottom: -$border-width;
 
   &:hover {
     border-color: $border-color--hover;
