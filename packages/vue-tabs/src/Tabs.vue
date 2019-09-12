@@ -67,9 +67,6 @@ export default {
     },
     activePanel () {
       return this.panels.find((panel, i) => this.isActive(i))
-    },
-    currentHash () {
-      return (this.$route ? this.$route.hash : window.location.hash).substring(1)
     }
   },
   watch: {
@@ -98,6 +95,9 @@ export default {
     this.loadSlots()
   },
   methods: {
+    currentHash () {
+      return (this.$route ? this.$route.hash : window.location.hash).substring(1)
+    },
     itemClicked (index) {
       const item = this.slotProps[index]
       if (item.ghost) {
@@ -114,12 +114,13 @@ export default {
       return false
     },
     setHash (index) {
+      const hash = this.currentHash()
       const item = this.slotProps[index]
-      if (this.currentHash === item.hash) {
+      if (hash === item.hash) {
         return
       }
 
-      if (this.$route && !this.currentHash && !item.hash) {
+      if (this.$route && !hash && !item.hash) {
         return
       }
 
@@ -131,8 +132,9 @@ export default {
       setHash(item.hash)
     },
     syncActiveHash () {
+      const hash = this.currentHash()
       const index = this.slotProps.findIndex(element => {
-        return element.hash === this.currentHash
+        return element.hash === hash
       })
 
       if (index < 0) {
