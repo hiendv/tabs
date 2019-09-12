@@ -69,9 +69,13 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
 | theme | Object | No | themeDefault - *[@hiendv/tabs](https://github.com/hiendv/tabs/tree/master/packages/tabs)* | Modulized style
 | show | Number | No | 0 | Initial active tab
 
+---
+
 | Method | Arguments | Return | Description
 |-------|-------|-------|-------|
 | loadSlots | () | No | Manually reload the slots
+
+---
 
 | Event | Arguments | Description
 |-------|-------|-------|
