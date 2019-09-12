@@ -132,6 +132,8 @@ describe('Tabs', () => {
         default: `
           <tab title="One" hash="one"><div>One Content</div></tab>
           <tab title="Two" hash="two"><div>Two Content</div></tab>
+          <tab title="Three"><div>Three Content</div></tab>
+          <tab title="Four"><div>Four Content</div></tab>
         `
       },
       localVue,
@@ -146,6 +148,12 @@ describe('Tabs', () => {
 
     wrapper.findAll('.item').at(1).trigger('click')
     expect(window.location.toString()).toEqual('http://localhost/#/#two')
+
+    wrapper.findAll('.item').at(2).trigger('click')
+    expect(window.location.toString()).toEqual('http://localhost/#/')
+
+    wrapper.findAll('.item').at(3).trigger('click')
+    expect(window.location.toString()).toEqual('http://localhost/#/')
   })
 
   it('renders <tab> without slots', () => {
