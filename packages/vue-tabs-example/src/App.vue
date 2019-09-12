@@ -69,7 +69,7 @@
       <section>
         <h3>Custom theme</h3>
         <div style="background-color: #fff; padding: 1rem">
-          <tabs :show.sync="show" :theme="themeCustom">
+          <tabs :theme="themeCustom">
             <tab title="First">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna.
