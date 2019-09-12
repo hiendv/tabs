@@ -88,12 +88,6 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
 | end | Boolean | No | false | Push the tab and its following friends to the right
 | ghost | Boolean | No | false | Mark tab as a pure button
 
-| Method | Arguments | Return | Description
-|-------|-------|-------|-------|
-
-| Event | Arguments | Description
-|-------|-------|-------|
-
 
 ## Development & Testing
 Please check the [Contributing Guidelines](https://github.com/hiendv/tabs/blob/master/CONTRIBUTING.md).
