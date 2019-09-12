@@ -113,7 +113,7 @@ export default {
     /* eslint-disable no-useless-escape */
     sourceDefault () {
       return `<template>
-  <tabs>
+  <tabs :theme="theme">
     <tab title="Foo">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
       sed do eiusmod tempor incididunt ut labore et dolore.
@@ -137,11 +137,11 @@ export default {
 </template>
 <script>
 import { globe, zap, beaker, flame } from 'octicons-vue'
-import { Tabs, Tab } from '@hiendv/vue-tabs'
+import { Tabs, Tab, themeDefault, themeDark } from '@hiendv/vue-tabs'
 export default {
   components: {
     Tabs,
-    Tab,
+    Tab
   },
   data () {
     return {
@@ -153,18 +153,21 @@ export default {
       themeText: 'Default'
     }
   },
-  switchTheme () {
-    if (this.themeText === 'Dark') {
-      this.themeText = 'Dark'
-      this.theme = themeDark
-      return
-    }
+  methods: {
+    switchTheme () {
+      if (this.themeText === 'Default') {
+        this.themeText = 'Dark'
+        this.theme = themeDark
+        return
+      }
 
-    this.themeText = 'Default'
-    this.theme = themeDefault
+      this.themeText = 'Default'
+      this.theme = themeDefault
+    }
   }
 }
-<\/script>`
+<\/script>
+`
     },
     sourceCustom () {
       return `<template>
@@ -172,11 +175,11 @@ export default {
     <template v-slot:nav="{ items }">
       <a
         v-for="(item, index) in items" :key="index"
-        href="#" @click.prevent="show = index"
-        :class="{
+        href="#" :class="{
           'custom-item': true,
           'active': show === index
         }"
+        @click.prevent="show = index"
       >{{ item.title }}</a>
     </template>
     <tab title="First">
@@ -200,7 +203,7 @@ import { Tabs, Tab } from '@hiendv/vue-tabs'
 export default {
   components: {
     Tabs,
-    Tab,
+    Tab
   },
   data () {
     return {
@@ -235,7 +238,8 @@ export default {
   color: #253140;
   background-color: #f9fafe;
 }
-</style>`
+</style>
+`
     },
     /* eslint-enable no-useless-escape */
     globe () {
