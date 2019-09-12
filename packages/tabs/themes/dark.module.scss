@@ -1,9 +1,8 @@
 @import "~@hiendv/bem-sass";
 
-$background-color: #4b6280;
-$color: #fff;
-$color--active: #a3c4e9;
-$border-color: lighten($background-color, 40%);
+$color: #e6e6e6;
+$color--active: #fff;
+$border-color: darken($color, 40%);
 $border-color--hover: $color;
 $border-color--active: $color--active;
 $border-width: 2px;
@@ -21,7 +20,6 @@ $border-width: 2px;
   margin-bottom: 0;
   list-style: none;
   border-bottom: $border-width solid $border-color;
-  background-color: $background-color;
 }
 
 .item {
@@ -49,6 +47,5 @@ $border-width: 2px;
 
 .panel {
   padding: 1rem;
-  color: darken($color, 20%);
-  background-color: $background-color;
+  color: $color--active;
 }
