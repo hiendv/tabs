@@ -34,7 +34,7 @@ export default [
         }
       })
     ],
-    external: ['@hiendv/tabs']
+    external: ['@hiendv/tabs', 'octicons-vue']
   },
   {
     input: reslv('src/main.js'),
