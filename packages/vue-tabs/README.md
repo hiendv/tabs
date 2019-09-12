@@ -38,10 +38,9 @@ import { Tabs, Tab } from '@hiendv/vue-tabs'
 new Vue({
   el: '#app',
   components: { Tabs, Tab }
-)
+})
 </script>
 
-// write your tabs
 <template>
   <tabs>
     <tab title="First">
@@ -65,69 +64,36 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
 
 ## Documentation
 ### Tabs
-#### Props
-```js
-{
-  // Theme from @hiendv/tabs. Default: styleDefault
-  theme: {
-    type: Object,
-    default () {
-      return styleDefault
-    }
-  }
-}
-```
-#### Methods
-```js
-{
-  // Load slots manually
-  loadSlots () {}
-}
-```
-#### Events
-```js
-{
-  // Current active tab
-  'update:show' (index) {}
-}
-```
+| Property | Type | Required | Default | Description
+|-------|-------|-------|-------|-------|
+| theme | Object | No | themeDefault - *[@hiendv/tabs](https://github.com/hiendv/tabs/tree/master/packages/tabs)* | Modulized style
+| show | Number | No | 0 | Initial active tab
+
+| Method | Arguments | Return | Description
+|-------|-------|-------|-------|
+| loadSlots | () | No | Manually reload the slots
+
+| Event | Arguments | Description
+|-------|-------|-------|
+| update:show | (index) | Current active tab
+
 
 ### Tab
 #### Props
-```js
-{
-  // Tab title
-  title: {
-    type: String,
-    default () {
-      return 'Title'
-    }
-  },
+| Property | Type | Required | Default | Description
+|-------|-------|-------|-------|-------|
+| title | String | No | 'Title' | Tab title
+| icon | Object | No | Empty | Tab octicon - *[octicons-vue](https://github.com/hiendv/octicons-modular/tree/master/packages/octicons-vue)*
+| hash | String | No | null | Unique hash fragment for easy boorkmark and navigation
+| end | Boolean | No | false | Push the tab and its following friends to the right
+| ghost | Boolean | No | false | Mark tab as a pure button
 
-  // Tab title octicon from octicons-vue
-  icon: {
-    type: Object,
-    default () {
-      return {
-        attrs () {},
-        path () {}
-      }
-    }
-  },
+| Method | Arguments | Return | Description
+|-------|-------|-------|-------|
 
-  // Hash fragment
-  hash: {
-    type: String,
-    default: null
-  },
+| Event | Arguments | Description
+|-------|-------|-------|
 
-  // Position break to the right
-  end: {
-    type: Boolean,
-    default: false
-  }
-}
-```
 
 ## Development & Testing
 Please check the [Contributing Guidelines](https://github.com/hiendv/tabs/blob/master/CONTRIBUTING.md).
