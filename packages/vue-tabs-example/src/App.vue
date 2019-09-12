@@ -5,63 +5,44 @@
         <h1>@hiendv/vue-tabs</h1>
       </header>
       <section>
-        <h3>Default</h3>
-        <div style="background-color: #fff; padding: 1rem">
-          <tabs>
-            <tab title="First" :icon="globe">
+        <h3>Default themes</h3>
+        <div :style="{ padding: '1rem', backgroundColor: isThemeDefault ? '#fff' : '#313131' }">
+          <tabs :theme="theme">
+            <tab title="Foo" :icon="globe">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua.
             </tab>
 
-            <tab title="Second" :icon="zap">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat.
-            </tab>
-
-            <tab title="Third" :icon="beaker">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur.
+            <tab
+              title="Bar" :icon="zap"
+              hash="bar"
+            >
+              Refresh and I'm still here because the URL fragment is <strong>#bar</strong> now.
             </tab>
 
             <tab
-              title="Fourth" :icon="flame"
+              title="Qux" :icon="beaker"
+              hash="qux"
+            >
+              Hi, my name is <strong>#qux</strong>
+            </tab>
+
+            <tab
+              :title="isThemeDefault ? 'Dark' : 'Default'" :icon="flame"
               end ghost
-              @click.prevent="fourth"
-            />
-
-            <tab
-              title="Fifth" :icon="heart"
-              ghost
+              @click.prevent="switchTheme"
             />
           </tabs>
         </div>
       </section>
       <section>
-        <h3>Dark</h3>
-        <div style="background-color: #4b6280; padding: 1rem">
-          <tabs :theme="themeDark">
-            <tab title="Stranger Things">
-              <img src="./assets/fdl.gif" width="100%">
-            </tab>
-
-            <tab title="The Big Bang Theory">
-              <img src="./assets/bzg.gif" width="100%">
-            </tab>
-
-            <tab title="The Punisher">
-              <img src="./assets/p.gif" width="100%">
-            </tab>
-          </tabs>
-        </div>
-      </section>
-      <section>
-        <h3>Default with custom navigation</h3>
+        <h3>Custom theme & navigation</h3>
         <div style="background-color: #fff; padding: 1rem">
-          <tabs :show.sync="show">
+          <tabs :show.sync="show" :theme="{panel: 'custom-tab-panel'}">
             <template v-slot:nav="{ items }">
               <a
                 v-for="(item, index) in items" :key="index"
-                href="#" style="padding: 1rem"
+                href="#" :class="{ 'custom-tab-item': true, 'active': show === index }"
                 @click.prevent="show = index"
               >{{ item.title }}</a>
             </template>
@@ -82,37 +63,13 @@
           </tabs>
         </div>
       </section>
-      <section>
-        <h3>Hash Fragment</h3>
-        <div style="background-color: #fff; padding: 1rem">
-          <tabs>
-            <tab
-              title="Foo" :icon="globe"
-              hash="foo"
-            >
-              The location hash should be <strong>#foo</strong>.
-            </tab>
-
-            <tab title="Qux" :icon="zap">
-              The location hash should be removed.
-            </tab>
-
-            <tab
-              title="Bar" :icon="beaker"
-              hash="bar"
-            >
-              The location hash should be <strong>#bar</strong>.
-            </tab>
-          </tabs>
-        </div>
-      </section>
     </div>
   </div>
 </template>
 
 <script>
-import { globe, zap, beaker, flame, heart } from 'octicons-vue'
-import { Tabs, Tab, themeDark } from '@hiendv/vue-tabs'
+import { globe, zap, beaker, flame } from 'octicons-vue'
+import { Tabs, Tab, themeDefault, themeDark } from '@hiendv/vue-tabs'
 export default {
   name: 'App',
   components: {
@@ -121,13 +78,11 @@ export default {
   },
   data () {
     return {
-      show: 1
+      show: 1,
+      theme: themeDefault
     }
   },
   computed: {
-    themeDark () {
-      return themeDark
-    },
     globe () {
       return globe
     },
@@ -140,13 +95,18 @@ export default {
     flame () {
       return flame
     },
-    heart () {
-      return heart
+    isThemeDefault () {
+      return this.theme === themeDefault
     }
   },
   methods: {
-    fourth () {
-      console.log('fourth')
+    switchTheme () {
+      if (this.isThemeDefault) {
+        this.theme = themeDark
+        return
+      }
+
+      this.theme = themeDefault
     }
   }
 }
@@ -170,5 +130,25 @@ section {
 .container {
   margin: 0 auto;
   max-width: 600px;
+}
+
+.custom-tab-item {
+  display: inline-block;
+  background-color: #7599ff;
+  color: #fff;
+  padding: .75rem 1rem;
+  border-radius: 4px;
+  margin-right: 2px;
+  text-decoration: none;
+  &.active {
+    background-color: #5e65a8;
+  }
+}
+
+.custom-tab-panel {
+  margin-top: 2px;
+  padding: 1rem;
+  color: #253140;
+  background-color: #f9fafe;
 }
 </style>
