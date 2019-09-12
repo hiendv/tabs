@@ -1,9 +1,9 @@
 {
   "name": "@hiendv/vue-tabs-example",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "private": true,
   "dependencies": {
-    "@hiendv/vue-tabs": "^0.2.5",
+    "@hiendv/vue-tabs": "^0.2.6",
     "core-js": "^2.6.9",
     "vue": "^2.6.10"
   },
