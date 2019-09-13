@@ -8,6 +8,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "@hiendv/bem-sass": "^0.1.0"
+  },
   "files": [
     "dist",
     "themes",
