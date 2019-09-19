@@ -8,9 +8,8 @@
             [theme.item]: true,
             [theme['item--active']]: isActive(index),
             [theme['item--end']]: props.end
-          }"
-          :href="`#${props.hash || ''}`" @click.prevent="itemClicked(index)"
-          v-on="listeners[index]"
+          }" :href="`#${props.hash || ''}`"
+          @click.prevent="itemClicked(index)" v-on="listeners[index]"
         ><octicon v-if="props.icon.attrs()" :icon="props.icon" /> {{ props.title }}</a>
       </nav>
     </slot>
