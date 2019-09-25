@@ -1,4 +1,84 @@
-# [0.1.0](https://github.com/hiendv/tabs/compare/v0.2.0...v0.1.0) (2019-08-19)
+# [](https://github.com/hiendv/tabs/compare/v0.2.7...v) (2019-09-25)
+
+
+### Code Refactoring
+
+* **tabs:** remove the iife output ([873e3c9](https://github.com/hiendv/tabs/commit/873e3c9))
+
+
+### BREAKING CHANGES
+
+* **tabs:** @hiendv/tabs no longer offers iife
+
+
+
+## [0.2.7](https://github.com/hiendv/tabs/compare/v0.2.6...v0.2.7) (2019-09-13)
+
+
+### Bug Fixes
+
+* **tabs:** add @hiendv/bem-sass as a dependency ([3a0335c](https://github.com/hiendv/tabs/commit/3a0335c))
+
+
+
+## [0.2.6](https://github.com/hiendv/tabs/compare/v0.2.5...v0.2.6) (2019-09-12)
+
+
+
+## [0.2.5](https://github.com/hiendv/tabs/compare/v0.2.4...v0.2.5) (2019-09-12)
+
+
+### Bug Fixes
+
+* **vue-tabs:** resolve a regression of 7b46a99 ([6dd1ac6](https://github.com/hiendv/tabs/commit/6dd1ac6))
+* **vue-tabs:** resolve location.hash reacivity & computed caching glitch ([5b5d492](https://github.com/hiendv/tabs/commit/5b5d492))
+
+
+
+## [0.2.4](https://github.com/hiendv/tabs/compare/v0.2.3...v0.2.4) (2019-09-10)
+
+
+### Bug Fixes
+
+* **vue-tabs:** add defensive checks for empty slots ([453fb7a](https://github.com/hiendv/tabs/commit/453fb7a))
+
+
+### Features
+
+* introduce ghost tabs ([c941d50](https://github.com/hiendv/tabs/commit/c941d50))
+
+
+
+## [0.2.3](https://github.com/hiendv/tabs/compare/v0.2.2...v0.2.3) (2019-09-10)
+
+
+### Bug Fixes
+
+* **tabs:** add missing position styling to the dark theme ([a95342f](https://github.com/hiendv/tabs/commit/a95342f))
+* **tabs:** re-style the themes with border ([b3dced8](https://github.com/hiendv/tabs/commit/b3dced8))
+
+
+### Features
+
+* add Tab positioning ([7f48260](https://github.com/hiendv/tabs/commit/7f48260))
+
+
+
+## [0.2.2](https://github.com/hiendv/tabs/compare/v0.2.1...v0.2.2) (2019-09-04)
+
+
+### Bug Fixes
+
+* **vue-tabs:** add a defensive check to avoid duplicated navigation ([7b46a99](https://github.com/hiendv/tabs/commit/7b46a99))
+
+
+
+## [0.2.1](https://github.com/hiendv/tabs/compare/v0.2.0...v0.2.1) (2019-09-03)
+
+
+### Features
+
+* add hash navigation ([35b2b18](https://github.com/hiendv/tabs/commit/35b2b18))
 
 
 
