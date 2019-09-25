@@ -1,16 +1,16 @@
 {
   "name": "tabs-monorepo",
-  "version": "0.1.0",
   "description": "Tabs Monorepo",
   "repository": "git@github.com:hiendv/tabs.git",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "@commitlint/config-lerna-scopes": "^8.1.0",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/config-lerna-scopes": "^8.2.0",
     "@hiendv/bem-sass": "^0.1.0",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
@@ -31,7 +31,7 @@
     "octicons-vue": "^0.18.9",
     "prismjs": "^1.17.1",
     "rimraf": "^3.0.0",
-    "rollup": "^1.21.3",
+    "rollup": "^1.21.4",
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -83,5 +83,8 @@
       "\\.(scss)$": "identity-obj-proxy"
     },
     "testURL": "http://localhost"
+  },
+  "resolutions": {
+    "handlebars": "^4.3.0"
   }
 }

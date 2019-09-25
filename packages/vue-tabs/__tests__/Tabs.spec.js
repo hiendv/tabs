@@ -1,8 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import { setHash } from '@hiendv/tabs'
 import VueRouter from 'vue-router'
-import Tab from '../src/Tab.js'
-import Tabs from '../src/Tabs.vue'
+import { Tabs, Tab } from '../src/main.js'
 
 let localVue = null
 

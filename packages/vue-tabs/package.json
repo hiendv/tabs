@@ -1,5 +1,6 @@
 {
   "name": "@hiendv/vue-tabs",
+  "description": "Tabs component for Vue.js",
   "version": "0.2.7",
   "main": "dist/common.js",
   "module": "dist/es.js",
