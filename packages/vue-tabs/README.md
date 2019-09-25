@@ -15,11 +15,12 @@ See [https://hiendv.github.io/tabs](https://hiendv.github.io/tabs)
 ## Installation & Usage
 ### CDN
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@hiendv/tabs@latest/dist/iife.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@hiendv/vue-tabs@latest/dist/iife.js" crossorigin="anonymous"></script>
 ```
 **Note: We recommend linking to a specific version number that you can update manually**
 ```js
+console.log(vuetabs.themeDefault, vuetabs.themeDark)
+
 Vue.component('tabs', vuetabs.Tabs)
 Vue.component('tab', vuetabs.Tab)
 ```

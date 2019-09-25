@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import vue from 'rollup-plugin-vue'
 import buble from 'rollup-plugin-buble'
+import postcss from 'rollup-plugin-postcss'
 
 const reslv = p => {
   return path.resolve(__dirname, p)
@@ -42,14 +43,16 @@ export default [
       name: 'vuetabs',
       format: 'iife',
       file: reslv('dist/iife.js'),
-      exports: 'named',
-      globals: {
-        '@hiendv/tabs': 'tabs'
-      }
+      exports: 'named'
     },
     plugins: [
       commonjs(),
       resolve(),
+      postcss({
+        modules: {
+          generateScopedName: '[name]__[local]'
+        }
+      }),
       vue({
         style: {
           preprocessOptions: {
@@ -60,7 +63,6 @@ export default [
         }
       }),
       buble()
-    ],
-    external: ['@hiendv/tabs']
+    ]
   }
 ]
