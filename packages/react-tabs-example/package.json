@@ -1,0 +1,22 @@
+{
+  "name": "@hiendv/react-tabs-example",
+  "version": "0.2.7",
+  "private": true,
+  "dependencies": {
+    "@hiendv/react-tabs": "^0.2.7",
+    "core-js": "^2.6.9",
+    "vue": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "vuePlugins": {
+    "resolveFrom": "../../"
+  }
+}
