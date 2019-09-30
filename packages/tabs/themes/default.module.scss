@@ -1,5 +1,6 @@
 @import "~@hiendv/bem-sass";
-@import "./base.module";
+@import "./base";
+
 $color: #4b6280;
 $color--active: #3c82d0;
 $border-color: lighten($color, 40%);
