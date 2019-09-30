@@ -1,16 +1,21 @@
+import { deepmerge } from '@hiendv/tabs'
+
 export default {
   name: 'Tab',
   functional: true,
   props: {
-    children: {
-      type: [Object, Array],
+    item: {
+      type: Object,
       default () {
-        return {}
+        return {
+          data: {},
+          children: []
+        }
       }
     }
   },
   render (h, context) {
     const { data, props } = context
-    return h('div', data, props.children)
+    return h('div', deepmerge(data, props.item.data.data), props.item.children)
   }
 }

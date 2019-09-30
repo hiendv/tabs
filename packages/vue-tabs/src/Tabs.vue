@@ -10,7 +10,10 @@
             [theme['item--end']]: props.end
           }" :href="`#${props.hash || ''}`"
           @click.prevent="itemClicked(index)" v-on="listeners[index]"
-        ><octicon v-if="props.icon.attrs()" :icon="props.icon" :className="theme.octicon"/> {{ props.title }}</a>
+        ><octicon
+          v-if="props.icon.attrs()" :icon="props.icon"
+          :class-name="theme.octicon"
+        /> {{ props.title }}</a>
       </nav>
     </slot>
     <transition
@@ -18,8 +21,8 @@
       mode="out-in"
     >
       <tab-panel
-        :key="active"
-        :class="theme.panel" :children="activePanel"
+        :key="active" :class="theme.panel"
+        :item="activePanel"
       />
     </transition>
   </div>
@@ -58,14 +61,11 @@ export default {
     slotProps () {
       return this.validChildren.map(vnode => vnode.data.props)
     },
-    panels () {
-      return this.validChildren.map(vnode => vnode.children)
-    },
     listeners () {
       return this.validChildren.map(vnode => vnode.data.listeners)
     },
     activePanel () {
-      return this.panels.find((panel, i) => this.isActive(i))
+      return this.validChildren.find((panel, i) => this.isActive(i))
     }
   },
   watch: {
