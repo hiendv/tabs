@@ -10,7 +10,7 @@
             [theme['item--end']]: props.end
           }" :href="`#${props.hash || ''}`"
           @click.prevent="itemClicked(index)" v-on="listeners[index]"
-        ><octicon v-if="props.icon.attrs()" :icon="props.icon" /> {{ props.title }}</a>
+        ><octicon v-if="props.icon.attrs()" :icon="props.icon" :className="theme.octicon"/> {{ props.title }}</a>
       </nav>
     </slot>
     <transition
