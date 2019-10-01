@@ -1,6 +1,10 @@
 const isObject = (obj) => obj && typeof obj === 'object'
 export function deepmerge (target, source) {
-  if (!isObject(target) || !isObject(source)) {
+  if (!isObject(source)) {
+    return target
+  }
+
+  if (!isObject(target)) {
     return source
   }
 
