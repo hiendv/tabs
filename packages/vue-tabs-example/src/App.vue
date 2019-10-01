@@ -90,6 +90,29 @@
         </div>
       </section>
       <section>
+        <h3>Custom panel class & style bindings</h3>
+        <div style="background-color: #fff; padding: 1rem">
+          <tabs>
+            <tab title="Blue" class="bg-blue text-white">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna.
+            </tab>
+
+            <tab title="Green" class="bg-green text-white">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+            </tab>
+
+            <tab title="Red" class="text-white" style="background-color: #ff3860;">
+              Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur.
+            </tab>
+          </tabs>
+          <hr>
+          <snippet :code="sourcePanelBindings" style="max-height: 400px" />
+        </div>
+      </section>
+      <section>
         <h3>Custom navigation</h3>
         <div style="background-color: #fff; padding: 1rem">
           <tabs :show.sync="show" class="my-tabs">
@@ -257,5 +280,17 @@ h1 {
   &.active {
     background-color: #5e65a8;
   }
+}
+
+.bg-blue {
+  background-color: #3273dc;
+}
+
+.bg-green {
+  background-color: #23d160;
+}
+
+.text-white {
+  color: #fff;
 }
 </style>

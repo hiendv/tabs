@@ -1,0 +1,35 @@
+@import "~@hiendv/bem-sass";
+
+.tabs {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.item {
+  display: block;
+  padding: .5rem .75rem;
+  text-decoration: none;
+
+  @include m("end") {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}
+
+.panel {
+  padding: 1rem;
+}
+
+.octicon {
+  height: 1em;
+  width: auto;
+}

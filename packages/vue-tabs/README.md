@@ -2,11 +2,12 @@
 Lightweight and flexible tabs component for the web :zap:
 
 ## Features
-- [x] Tab definition using template & programmatically
-- [x] Octicons support in tab items
+- [x] Template-first approach
 - [x] Beautiful modulized themes included
-- [x] Easily accessible navigation with URL
-- [x] Easy tab positioning
+- [x] Individual panel styling
+- [x] Easy positioning
+- [x] Accessible navigation with hash fragment
+- [x] Octicons support
 - [x] *Ghost* tabs support
 
 ## Demo

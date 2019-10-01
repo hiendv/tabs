@@ -1,4 +1,5 @@
 @import "~@hiendv/bem-sass";
+@import "./base";
 
 $color: #e6e6e6;
 $color--active: #fff;
@@ -7,25 +8,11 @@ $border-color--hover: $color;
 $border-color--active: $color--active;
 $border-width: 2px;
 
-.tabs {
-  * {
-    box-sizing: border-box;
-  }
-}
-
 .items {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
   border-bottom: $border-width solid $border-color;
 }
 
 .item {
-  display: block;
-  padding: .5rem .75rem;
-  text-decoration: none;
   color: $color;
   border-bottom: $border-width solid $border-color;
   margin-bottom: -$border-width;
@@ -38,14 +25,8 @@ $border-width: 2px;
     color: $color--active!important;
     border-color: $border-color--active!important;
   }
-
-  @include m("end") {
-    justify-content: flex-end;
-    margin-left: auto;
-  }
 }
 
 .panel {
-  padding: 1rem;
   color: $color--active;
 }
