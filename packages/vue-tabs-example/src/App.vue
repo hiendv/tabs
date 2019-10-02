@@ -33,9 +33,9 @@
         </div>
       </section>
       <section>
-        <h3>Different themes, icon, hash, push-to-right & pure button</h3>
-        <div :style="{ padding: '1rem', backgroundColor: isDefault ? '#fff' : '#313131' }">
-          <tabs :theme="theme">
+        <h3>Different icon, hash, push-to-right & pure button</h3>
+        <div style="background-color: #fff; padding: 1rem">
+          <tabs>
             <tab title="Foo" :icon="globe">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit,
               sed do eiusmod tempor incididunt ut labore et dolore.
@@ -57,13 +57,29 @@
             </tab>
 
             <tab
-              :title="themeText" :icon="flame"
+              title="Ghost" :icon="flame"
               end ghost
-              @click.prevent="switchTheme"
             />
           </tabs>
           <hr>
           <snippet :code="sourceFull" style="max-height: 400px" />
+        </div>
+      </section>
+      <section>
+        <h3>Batteries included: Themes</h3>
+        <div :style="{ padding: '1rem', backgroundColor: isDark ? '#313131' : '#fff' }">
+          <tabs :theme="themes[activeTheme].theme">
+            <tab
+              v-for="(item, i) in themes"
+              :key="i"
+              :title="item.name"
+              @click.prevent="() => switchTheme(i)">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna.
+            </tab>
+          </tabs>
+          <hr>
+          <snippet :code="sourceThemes" style="max-height: 400px" />
         </div>
       </section>
       <section>
@@ -154,7 +170,7 @@
 
 <script>
 import { globe, zap, beaker, flame } from 'octicons-vue'
-import { Tabs, Tab, themeDefault, themeDark } from '@hiendv/vue-tabs'
+import { Tabs, Tab, themeDefault, themeDark, themeMaterial, themeMaterialDark } from '@hiendv/vue-tabs'
 import Snippet from './Snippet.vue'
 import sources from './sources'
 export default {
@@ -167,8 +183,24 @@ export default {
   data () {
     return {
       show: 1,
-      theme: themeDefault,
-      themeText: 'Default',
+      themes: [{
+        name: 'Default',
+        theme: themeDefault,
+        type: 'light'
+      }, {
+        name: 'Dark',
+        theme: themeDark,
+        type: 'dark'
+      }, {
+        name: 'Material',
+        theme: themeMaterial,
+        type: 'light'
+      }, {
+        name: 'Material Dark',
+        theme: themeMaterialDark,
+        type: 'dark'
+      }],
+      activeTheme: 0,
       themeCustom: {
         tabs: 'custom-tabs',
         items: 'custom-items',
@@ -182,7 +214,10 @@ export default {
   computed: {
     ...sources,
     isDefault () {
-      return this.themeText === 'Default'
+      return this.activeTheme === 0
+    },
+    isDark () {
+      return this.themes[this.activeTheme].type === 'dark'
     },
     globe () {
       return globe
@@ -198,15 +233,8 @@ export default {
     }
   },
   methods: {
-    switchTheme () {
-      if (this.isDefault) {
-        this.themeText = 'Dark'
-        this.theme = themeDark
-        return
-      }
-
-      this.themeText = 'Default'
-      this.theme = themeDefault
+    switchTheme (i) {
+      this.activeTheme = i
     }
   }
 }

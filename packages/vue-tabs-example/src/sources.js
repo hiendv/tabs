@@ -30,7 +30,7 @@ export default {
   },
   sourceFull () {
     return `<template>
-  <tabs :theme="theme">
+  <tabs>
     <tab title="Foo">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
       sed do eiusmod tempor incididunt ut labore et dolore.
@@ -46,15 +46,14 @@ export default {
     </tab>
 
     <tab
-      :title="themeText" :icon="flame"
+      title="Ghost" :icon="flame"
       end ghost
-      @click.prevent="switchTheme"
     />
   </tabs>
 </template>
 <script>
 import { globe, zap, beaker, flame } from 'octicons-vue'
-import { Tabs, Tab, themeDefault, themeDark } from '@hiendv/vue-tabs'
+import { Tabs, Tab } from '@hiendv/vue-tabs'
 export default {
   components: {
     Tabs,
@@ -65,21 +64,68 @@ export default {
       globe,
       zap,
       beaker,
-      flame,
-      theme: themeDefault,
-      themeText: 'Default'
+      flame
+    }
+  }
+}
+<\/script>
+`
+  },
+  sourceThemes () {
+    return `
+<template>
+  <tabs :theme="themes[activeTheme].theme">
+    <tab
+      v-for="(item, i) in themes"
+      :key="i"
+      :title="item.name"
+      @click.prevent="() => switchTheme(i)">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna.
+    </tab>
+  </tabs>
+</template>
+<script>
+import { Tabs, Tab, themeDefault, themeDark, themeMaterial, themeMaterialDark } from '@hiendv/vue-tabs'
+export default {
+  name: 'App',
+  components: {
+    Tabs,
+    Tab
+  },
+  data () {
+    return {
+      themes: [{
+        name: 'Default',
+        theme: themeDefault,
+        type: 'light'
+      }, {
+        name: 'Dark',
+        theme: themeDark,
+        type: 'dark'
+      }, {
+        name: 'Material',
+        theme: themeMaterial,
+        type: 'light'
+      }, {
+        name: 'Material Dark',
+        theme: themeMaterialDark,
+        type: 'dark'
+      }],
+      activeTheme: 0
+    }
+  },
+  computed: {
+    isDefault () {
+      return this.activeTheme === 0
+    },
+    isDark () {
+      return this.themes[this.activeTheme].type === 'dark'
     }
   },
   methods: {
-    switchTheme () {
-      if (this.themeText === 'Default') {
-        this.themeText = 'Dark'
-        this.theme = themeDark
-        return
-      }
-
-      this.themeText = 'Default'
-      this.theme = themeDefault
+    switchTheme (i) {
+      this.activeTheme = i
     }
   }
 }
