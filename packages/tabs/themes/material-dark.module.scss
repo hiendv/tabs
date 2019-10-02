@@ -1,0 +1,35 @@
+@import "~@hiendv/bem-sass";
+@import "./base-material";
+
+$color: #dddddd;
+$background: rgba(0,0,0,.82);
+$color--active: #66BB6A;
+$border-color: rgba(255, 255, 255, .15);
+$hover-color: rgba(255, 255, 255, .08);
+$border-width: 1px;
+
+.items {
+  border-bottom: $border-width solid $border-color;
+  background: $background;
+}
+
+.item {
+  color: $color;
+
+  &:hover {
+    background: $hover-color;
+  }
+
+  &:after {
+    background: $color--active;
+  }
+
+  @include m("active") {
+    color: $color--active !important;
+  }
+}
+
+.panel {
+  background: $background;
+  color: $color;
+}
