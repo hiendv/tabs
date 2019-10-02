@@ -10,8 +10,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@hiendv/tabs": "^0.2.7",
-    "octicons-react": "^0.18.9"
+    "@hiendv/tabs": "*",
+    "octicons-react": "^0.18.10"
   },
   "files": [
     "dist",

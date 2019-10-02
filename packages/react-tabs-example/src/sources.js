@@ -108,15 +108,14 @@ export default class App extends Component {
     super()
   }
   navRenderer (items, self) {
-    const theme = this.state.theme
     return (
-      <nav className={theme.items}>
+      <nav className='my-items'>
         {
           items.map(({ className, end, hash, icon, title }, i) => (
             <a
-              className={[\`\${theme.item} \${self.isActive(i) ? 'item--active' : ''} \${end ? 'item--end' : ''}\`, className]}
+              className={\`my-item\${self.isActive(i) ? ' active' : ''}\`}
               key={i}
-              href={hash}
+              href={hash || '#'}
               onClick={(e) => self.handleClick(e, i)}>
               {icon.attrs() &&
                 <Octicon icon={icon} />

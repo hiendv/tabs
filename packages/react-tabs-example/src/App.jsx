@@ -31,13 +31,12 @@ export default class App extends Component {
     })
   }
   navRenderer (items, self) {
-    const theme = this.state.theme
     return (
-      <nav className={theme.items}>
+      <nav className='my-items'>
         {
           items.map(({ className, end, hash, icon, title }, i) => (
             <a
-              className={`${theme.item} ${self.isActive(i) ? theme['item--active'] : ''} ${end ? theme['item--end'] : ''}`}
+              className={`my-item${self.isActive(i) ? ' active' : ''}`}
               key={i}
               href={hash || '#'}
               onClick={(e) => self.handleClick(e, i)}>
@@ -58,6 +57,7 @@ export default class App extends Component {
           <header>
             <h1><a href='https://github.com/hiendv/tabs/tree/master/packages/react-tabs'>@hiendv/react-tabs</a></h1>
             <iframe
+              title='ghbtn'
               src='https://ghbtns.com/github-btn.html?user=hiendv&repo=tabs&type=star&count=true&size=large' frameBorder='0'
               scrolling='0' width='160px'
               height='30px'

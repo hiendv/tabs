@@ -3,9 +3,9 @@
   "version": "0.2.7",
   "private": true,
   "dependencies": {
-    "@hiendv/react-tabs": "^0.2.7",
+    "@hiendv/react-tabs": "*",
     "core-js": "^2.6.9",
-    "vue": "^2.6.10"
+    "react-scripts": "^3.1.2"
   },
   "postcss": {
     "plugins": {
@@ -15,8 +15,5 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ],
-  "vuePlugins": {
-    "resolveFrom": "../../"
-  }
+  ]
 }

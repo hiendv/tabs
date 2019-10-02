@@ -3,7 +3,6 @@ import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import buble from 'rollup-plugin-buble'
 import postcss from 'rollup-plugin-postcss'
-import scss from 'rollup-plugin-scss'
 
 const reslv = p => {
   return path.resolve(__dirname, p)
@@ -24,7 +23,11 @@ export default [
     ],
     plugins: [
       resolve(),
-      scss(),
+      postcss({
+        modules: {
+          generateScopedName: '[name]__[local]'
+        }
+      }),
       buble({
         objectAssign: 'Object.assign'
       }),
@@ -44,7 +47,6 @@ export default [
     },
     plugins: [
       resolve(),
-      scss(),
       postcss({
         modules: {
           generateScopedName: '[name]__[local]'

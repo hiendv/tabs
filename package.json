@@ -37,6 +37,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.0",
+    "react-scripts": "^3.1.2",
     "react-transition-group": "^4.3.0",
     "rimraf": "^3.0.0",
     "rollup": "^1.22.0",
@@ -44,7 +45,6 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-scss": "^1.0.2",
     "rollup-plugin-vue": "^5.0.1",
     "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
@@ -65,8 +65,8 @@
     "lint": "eslint --ext .js,.vue,.jsx packages/* --fix",
     "serve:vue": "lerna exec --scope @hiendv/vue-tabs-example -- vue-cli-service serve",
     "build:vue": "lerna exec --scope @hiendv/vue-tabs-example -- vue-cli-service build",
-    "serve:react": "lerna exec --scope @hiendv/react-tabs-example -- vue-cli-service serve",
-    "build:react": "lerna exec --scope @hiendv/react-tabs-example -- vue-cli-service build",
+    "serve:react": "lerna exec --scope @hiendv/react-tabs-example -- react-scripts start",
+    "build:react": "lerna exec --scope @hiendv/react-tabs-example -- react-scripts build",
     "prebuild": "$npm_execpath run clean",
     "prewatch": "$npm_execpath run clean",
     "prebuild:vue": "$npm_execpath run lint",
@@ -98,6 +98,5 @@
   },
   "resolutions": {
     "handlebars": "^4.3.0"
-  },
-  "dependencies": {}
+  }
 }
