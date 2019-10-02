@@ -94,7 +94,7 @@ export default class Tabs extends React.Component {
             {
               this.slotProps().map(({ className, ...props }, i) => (
                 <a
-                  className={className || `${theme.item} ${this.isActive(i) ? theme['item--active'] : ''} ${props.end ? theme['item--end'] : ''}`}
+                  className={`${theme.item} ${this.isActive(i) ? theme['item--active'] : ''} ${props.end ? theme['item--end'] : ''}`}
                   key={i}
                   href={props.hash || '#'}
                   onClick={(e) => this.handleClick(e, i)}>
@@ -113,7 +113,7 @@ export default class Tabs extends React.Component {
             addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
             classNames='slide-down'
             timeout={150}>
-            <TabPanel key={this.state.active} className={`${theme.panel} slide-down`}>
+            <TabPanel key={this.state.active} className={`${theme.panel} ${this.slotProps().length ? this.slotProps()[this.state.active].className : ''} slide-down`}>
               {this.slotProps().length && this.slotProps()[this.state.active].children}
             </TabPanel>
           </CSSTransition>
