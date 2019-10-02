@@ -86,7 +86,7 @@ export default {
   </tabs>
 </template>
 <script>
-import { Tabs, Tab, themeDefault, themeDark, themeMaterial, themeMaterialDark } from '@hiendv/vue-tabs'
+import { Tabs, Tab, themeDefault, themeDark, themeMaterial, themeMaterialDark, themeMetro, themeMetroDark } from '@hiendv/vue-tabs'
 export default {
   name: 'App',
   components: {

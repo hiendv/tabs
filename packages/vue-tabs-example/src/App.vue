@@ -170,7 +170,7 @@
 
 <script>
 import { globe, zap, beaker, flame } from 'octicons-vue'
-import { Tabs, Tab, themeDefault, themeDark, themeMaterial, themeMaterialDark } from '@hiendv/vue-tabs'
+import { Tabs, Tab, themeDefault, themeDark, themeMaterial, themeMaterialDark, themeMetro, themeMetroDark } from '@hiendv/vue-tabs'
 import Snippet from './Snippet.vue'
 import sources from './sources'
 export default {
@@ -198,6 +198,14 @@ export default {
       }, {
         name: 'Material Dark',
         theme: themeMaterialDark,
+        type: 'dark'
+      }, {
+        name: 'Metro',
+        theme: themeMetro,
+        type: 'light'
+      }, {
+        name: 'Metro Dark',
+        theme: themeMetroDark,
         type: 'dark'
       }],
       activeTheme: 0,
