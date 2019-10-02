@@ -61,6 +61,20 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  it('renders with panel custom bindings', () => {
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One" style="background-color: #f5f5f5" class="foobar"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('renders with custom navigation', () => {
     const wrapper = mount(Tabs, {
       propsData: {

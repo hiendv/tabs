@@ -146,6 +146,26 @@ export default {
 </style>
 `
   },
+  sourcePanelBindings () {
+    return `<template>
+  <tabs>
+    <tab title="Blue" class="bg-blue text-white">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna.
+    </tab>
+
+    <tab title="Green" class="bg-green text-white">
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
+    </tab>
+
+    <tab title="Red" class="text-white" style="background-color: #ff3860;">
+      Duis aute irure dolor in reprehenderit in voluptate velit
+      esse cillum dolore eu fugiat nulla pariatur.
+    </tab>
+  </tabs>
+</template>`
+  },
   sourceCustomNavigation () {
     return `<template>
   <tabs :show.sync="show" class="my-tabs">
