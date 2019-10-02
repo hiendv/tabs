@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@hiendv/tabs": "^0.2.8",
-    "octicons-vue": "^0.18.9"
+    "octicons-vue": "^0.18.10"
   },
   "files": [
     "dist",
