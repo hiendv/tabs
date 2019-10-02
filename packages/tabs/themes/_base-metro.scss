@@ -1,0 +1,44 @@
+@import "~@hiendv/bem-sass";
+
+$transition: cubic-bezier(0.23, 0.54, 0.19, 0.99);
+
+.tabs {
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'SegoeUI', 'Roboto', sans-serif;
+  }
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  list-style: none;
+  line-height: 40px;
+  min-height: 40px;
+  padding: 10px;
+  border: 2px solid white;
+}
+
+.item {
+  position: relative;
+  display: inline-block;
+  padding: 0 18px;
+  font-size: 1rem;
+  text-decoration: none;
+
+  @include m("end") {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}
+
+.panel {
+  padding: 1rem;
+}
+
+.octicon {
+  height: 1em;
+  width: auto;
+  margin-right: 4px;
+}

@@ -1,0 +1,32 @@
+@import "~@hiendv/bem-sass";
+@import "./base-metro";
+
+$color: white;
+$color--active: #2d89ef;
+$border-color: rgba(255,255,255, .12);
+$hover-color: rgba(255,255,255, .08);
+
+.items {
+  border-color: $border-color;
+}
+
+.item {
+  color: $color;
+
+  &:hover {
+    background: $hover-color;
+  }
+
+  &:after {
+    background: $color--active;
+  }
+
+  @include m("active") {
+    background: $color--active !important;
+    color: white;
+  }
+}
+
+.panel {
+  color: $color;
+}
