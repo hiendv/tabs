@@ -1,99 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs renders <tab> without contents 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item item--active " href="#">First</a><a class="item  " href="#">Second</a></nav>
-  <div class="panel"></div>
+  <div class="panel  slide-down"></div>
 </div>
 `;
 
 exports[`Tabs renders <tab> without contents 2`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#">First</a><a class="item item--active " href="#">Second</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active"></div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active"></div>
 </div>
 `;
 
 exports[`Tabs renders 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item item--active " href="#">First</a><a class="item  " href="#">Second</a></nav>
-  <div class="panel">1</div>
+  <div class="panel  slide-down">1</div>
 </div>
 `;
 
 exports[`Tabs renders 2`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#">First</a><a class="item item--active " href="#">Second</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active">1</div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active">1</div>
 </div>
 `;
 
 exports[`Tabs renders end <tab> 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#">First</a><a class="item item--active item--end" href="#">End</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active"></div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active"></div>
 </div>
 `;
 
 exports[`Tabs renders end <tab> 2`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#">First</a><a class="item item--active item--end" href="#">End</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active"></div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active"></div>
 </div>
 `;
 
 exports[`Tabs renders ghost <tab> 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#">First</a><a class="item item--active " href="#">Second</a><a class="item  " href="#">Ghost</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active"></div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active"></div>
 </div>
 `;
 
 exports[`Tabs renders ghost <tab> 2`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#">First</a><a class="item item--active " href="#">Second</a><a class="item  " href="#">Ghost</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active"></div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active"></div>
 </div>
 `;
 
 exports[`Tabs renders with custom navigation 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#">First</a><a class="item item--active " href="#">Second</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active">1</div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active">1</div>
 </div>
 `;
 
 exports[`Tabs renders with custom navigation 2`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item item--active " href="#">First</a><a class="item  " href="#">Second</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active">1</div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active">1</div>
 </div>
 `;
 
 exports[`Tabs renders with custom theme 1`] = `
-<div class="one">
+<div class=" one">
   <nav class="two"><a class="three  " href="#">First</a><a class="three three--active " href="#">Second</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active">1</div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active">1</div>
 </div>
 `;
 
 exports[`Tabs renders with hashes 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item item--active " href="one">First</a><a class="item  " href="two">Second</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active">1</div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active">1</div>
 </div>
 `;
 
 exports[`Tabs renders with hashes from react-router 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"><a class="item  " href="#/one">One</a><a class="item  " href="#/two">Two</a><a class="item item--active " href="#/">Three</a><a class="item  " href="#/">Four</a></nav>
-  <div class="panel slide-down-exit slide-down-exit-active">1</div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active">1</div>
 </div>
 `;
 
 exports[`Tabs renders without contents 1`] = `
-<div class="tabs">
+<div class=" tabs">
   <nav class="items"></nav>
-  <div class="panel slide-down-exit slide-down-exit-active">1</div>
+  <div class="panel slide-down slide-down-exit slide-down-exit-active">1</div>
 </div>
 `;

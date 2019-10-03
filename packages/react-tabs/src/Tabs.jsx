@@ -85,7 +85,7 @@ export default class Tabs extends React.Component {
   render () {
     const theme = this.props.theme
     return (
-      <div className={`${this.props.className} ${theme.tabs}`}>
+      <div className={`${this.props.className || ''} ${theme.tabs}`}>
         {this.props.navRenderer &&
           this.props.navRenderer(this.slotProps(), this)
         }
@@ -113,7 +113,7 @@ export default class Tabs extends React.Component {
             addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
             classNames='slide-down'
             timeout={150}>
-            <TabPanel key={this.state.active} className={`${theme.panel} ${this.slotProps().length ? this.slotProps()[this.state.active].className : ''} slide-down`}>
+            <TabPanel key={this.state.active} className={`${theme.panel} ${this.slotProps().length ? (this.slotProps()[this.state.active].className || '') : ''} slide-down`}>
               {this.slotProps().length && this.slotProps()[this.state.active].children}
             </TabPanel>
           </CSSTransition>
