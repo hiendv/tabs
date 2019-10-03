@@ -73,7 +73,8 @@
               v-for="(item, i) in themes"
               :key="i"
               :title="item.name"
-              @click.prevent="() => switchTheme(i)">
+              @click.prevent="() => switchTheme(i)"
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna.
             </tab>
@@ -119,7 +120,10 @@
               laboris nisi ut aliquip ex ea commodo consequat.
             </tab>
 
-            <tab title="Red" class="text-white" style="background-color: #ff3860;">
+            <tab
+              title="Red" class="text-white"
+              style="background-color: #ff3860;"
+            >
               Duis aute irure dolor in reprehenderit in voluptate velit
               esse cillum dolore eu fugiat nulla pariatur.
             </tab>
