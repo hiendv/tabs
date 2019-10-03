@@ -1,0 +1,63 @@
+@import "~@hiendv/bem-sass";
+
+$border-height: 0px;
+$border-height--active: 3px;
+$transition: cubic-bezier(0.23, 0.54, 0.19, 0.99);
+
+.tabs {
+  * {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  line-height: 48px;
+  min-height: 48px;
+}
+
+.item {
+  position: relative;
+  display: inline-block;
+  padding: 0 24px;
+  font-size: 0.9em;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $border-height;
+    transition: height .4s $transition;
+  }
+
+  @include m('active') {
+    &:after {
+      height: $border-height--active;
+    }
+  }
+
+  @include m("end") {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}
+
+.panel {
+  padding: 1rem;
+}
+
+.octicon {
+  height: 1em;
+  width: auto;
+  margin-right: 4px;
+}
