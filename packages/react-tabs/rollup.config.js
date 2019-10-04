@@ -25,7 +25,7 @@ export default [
       resolve(),
       postcss({
         modules: {
-          generateScopedName: '[name]__[local]'
+          generateScopedName: '[local]'
         }
       }),
       buble({
