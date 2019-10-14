@@ -1,29 +1,13 @@
 # react-tabs-example
 
-## Project setup
-```
-yarn install
-```
-
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+# from the root monorepo
+yarn run serve:react
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
+# from the root monorepo
+yarn run build:react
 ```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,28 +1,15 @@
 # vue-tabs-example
 
-## Project setup
-```
-yarn install
-```
-
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+# from the root monorepo
+yarn run serve:vue
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
+# from the root monorepo
+yarn run build:vue
 ```
 
 ### Customize configuration
