@@ -1,19 +1,19 @@
 <template>
   <div :class="theme.tabs">
-    <slot name="nav" :items="slotProps">
+    <slot name="nav" :items="items">
       <nav :class="theme.items">
         <a
-          v-for="(props, index) in slotProps" :key="index"
+          v-for="(item, index) in items" :key="index"
           :class="{
             [theme.item]: true,
             [theme['item--active']]: isActive(index),
-            [theme['item--end']]: props.end
-          }" :href="`#${props.hash || ''}`"
+            [theme['item--end']]: item.end
+          }" :href="`#${item.hash || ''}`"
           @click.prevent="itemClicked(index)" v-on="listeners[index]"
         ><octicon
-          v-if="props.icon.attrs()" :icon="props.icon"
+          v-if="item.icon.attrs()" :icon="item.icon"
           :class-name="theme.octicon"
-        /> {{ props.title }}</a>
+        /> {{ item.title }}</a>
       </nav>
     </slot>
     <transition
@@ -58,7 +58,7 @@ export default {
     validChildren () {
       return this.slots.filter(vnode => vnode && vnode.fnOptions && vnode.fnOptions.name === 'Tab' && vnode.data)
     },
-    slotProps () {
+    items () {
       return this.validChildren.map(vnode => vnode.data.props)
     },
     listeners () {
@@ -98,7 +98,7 @@ export default {
       return (this.$route ? this.$route.hash : window.location.hash).substring(1)
     },
     itemClicked (index) {
-      const item = this.slotProps[index]
+      const item = this.items[index]
       if (item.ghost) {
         return
       }
@@ -114,7 +114,7 @@ export default {
     },
     setHash (index) {
       const hash = this.currentHash()
-      const item = this.slotProps[index]
+      const item = this.items[index]
       if (hash === item.hash) {
         return
       }
@@ -132,7 +132,7 @@ export default {
     },
     syncActiveHash () {
       const hash = this.currentHash()
-      const index = this.slotProps.findIndex(element => {
+      const index = this.items.findIndex(element => {
         return element.hash === hash
       })
 

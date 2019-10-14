@@ -13,7 +13,7 @@ export default class Tabs extends React.Component {
     this.state = {
       active: 0
     }
-    this.slotProps = this.slotProps.bind(this)
+    this.items = this.items.bind(this)
     this.syncActiveHash = this.syncActiveHash.bind(this)
     this.currentHash = this.currentHash.bind(this)
     this.isActive = this.isActive.bind(this)
@@ -25,7 +25,7 @@ export default class Tabs extends React.Component {
     this.setActive(this.props.show)
     this.syncActiveHash()
   }
-  slotProps () {
+  items () {
     return this.props.children.map(c => c.props)
   }
   currentHash () {
@@ -36,7 +36,7 @@ export default class Tabs extends React.Component {
   }
   setHash (index) {
     const hash = this.currentHash()
-    const item = this.slotProps()[index]
+    const item = this.items()[index]
     if (hash === item.hash) {
       return
     }
@@ -53,7 +53,7 @@ export default class Tabs extends React.Component {
   }
   syncActiveHash () {
     const hash = this.currentHash()
-    const index = this.slotProps().findIndex(el => {
+    const index = this.items().findIndex(el => {
       return el.hash === hash
     })
 
@@ -72,7 +72,7 @@ export default class Tabs extends React.Component {
   }
   handleClick (e, index) {
     e.preventDefault()
-    const item = this.slotProps()[index]
+    const item = this.items()[index]
     if (item.onClick) {
       item.onClick(e)
     }
@@ -87,21 +87,21 @@ export default class Tabs extends React.Component {
     return (
       <div className={`${this.props.className || ''} ${theme.tabs}`}>
         {this.props.navRenderer &&
-          this.props.navRenderer(this.slotProps(), this)
+          this.props.navRenderer(this.items(), this)
         }
         {!this.props.navRenderer &&
           <nav className={theme.items}>
             {
-              this.slotProps().map(({ className, ...props }, i) => (
+              this.items().map(({ className, ...item }, i) => (
                 <a
-                  className={`${theme.item} ${this.isActive(i) ? theme['item--active'] : ''} ${props.end ? theme['item--end'] : ''}`}
+                  className={`${theme.item} ${this.isActive(i) ? theme['item--active'] : ''} ${item.end ? theme['item--end'] : ''}`}
                   key={i}
-                  href={props.hash || '#'}
+                  href={item.hash || '#'}
                   onClick={(e) => this.handleClick(e, i)}>
-                  {props.icon.attrs() &&
-                    <Octicon icon={props.icon} />
+                  {item.icon.attrs() &&
+                    <Octicon icon={item.icon} />
                   }
-                  {props.title}
+                  {item.title}
                 </a>
               ))
             }
@@ -113,8 +113,8 @@ export default class Tabs extends React.Component {
             addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
             classNames='slide-down'
             timeout={150}>
-            <TabPanel key={this.state.active} className={`${theme.panel} ${this.slotProps().length ? (this.slotProps()[this.state.active].className || '') : ''} slide-down`}>
-              {this.slotProps().length && this.slotProps()[this.state.active].children}
+            <TabPanel key={this.state.active} className={`${theme.panel} ${this.items().length ? (this.items()[this.state.active].className || '') : ''} slide-down`}>
+              {this.items().length && this.items()[this.state.active].children}
             </TabPanel>
           </CSSTransition>
         </SwitchTransition>}
