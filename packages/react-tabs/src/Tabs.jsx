@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Octicon from 'octicons-react'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
+import classNames from 'classnames'
 import { setHash, themeDefault } from '@hiendv/tabs'
 import TabPanel from './TabPanel.jsx'
 import Tab from './Tab.jsx'
@@ -87,17 +88,18 @@ export default class Tabs extends React.Component {
   }
   render () {
     const theme = this.props.theme
-    const className = this.props.className ? `${this.props.className} ${theme.tabs}` : theme.tabs
-
     return (
-      <div className={className}>
+      <div className={classNames(this.props.className, theme.tabs)}>
         {this.props.navRenderer && this.props.navRenderer(this.items(), this)}
         {!this.props.navRenderer &&
           <nav className={theme.items}>
             {
               this.items().map(({ className, ...item }, i) => (
                 <a
-                  className={`${theme.item} ${this.isActive(i) ? theme['item--active'] : ''} ${item.end ? theme['item--end'] : ''}`}
+                  className={classNames(theme.item, {
+                    [theme['item--active']]: this.isActive(i),
+                    [theme['item--end']]: item.end
+                  })}
                   key={i}
                   href={item.hash || '#'}
                   onClick={(e) => this.handleClick(e, i)}>
@@ -118,7 +120,7 @@ export default class Tabs extends React.Component {
             addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
             classNames='slide-down'
             timeout={150}>
-            <TabPanel key={this.state.active} className={`${theme.panel} slide-down`} item={this.activePanel()}></TabPanel>
+            <TabPanel key={this.state.active} className={classNames(theme.panel, 'slide-down')} item={this.activePanel()}></TabPanel>
           </CSSTransition>
         </SwitchTransition>}
       </div>
