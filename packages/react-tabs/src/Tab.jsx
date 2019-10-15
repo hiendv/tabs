@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function Tab (props) {
-  if (props.ghost) return <div />
-  if (!props.children) return <div />
-  return <div onClick={props.onClick}>{props.children}</div>
+  return (null)
 }
 
 Tab.propTypes = {
@@ -26,7 +24,8 @@ Tab.defaultProps = {
   hash: null,
   end: false,
   ghost: false,
-  onClick () { }
+  onClick () { },
+  children: undefined
 }
 
 export default Tab
