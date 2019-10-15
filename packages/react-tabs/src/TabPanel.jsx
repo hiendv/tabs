@@ -2,10 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function TabPanel (props) {
-  if (!props.item) {
-    return (null)
-  }
-
   const className = props.item.props.class ? `${props.className} ${props.item.props.class}` : props.className
 
   return React.createElement(
