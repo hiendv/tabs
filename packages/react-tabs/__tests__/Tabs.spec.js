@@ -62,7 +62,7 @@ describe('Tabs', () => {
   it('renders with panel custom bindings', () => {
     act(() => {
       ReactDOM.render(<Tabs show={1}>
-        <Tab title='Foo' style={{backgroundColor: '#f5f5f5'}} className="foobar"><div>One Content</div></Tab>
+        <Tab title='Foo' style={{ backgroundColor: '#f5f5f5' }} className="foobar"><div>One Content</div></Tab>
         <Tab title='Bar'><div>Two Content</div></Tab>
       </Tabs>, container)
     })
@@ -70,7 +70,6 @@ describe('Tabs', () => {
     expect(container.innerHTML).toMatchSnapshot()
     Simulate.click(container.querySelectorAll('a')[0])
     expect(container.innerHTML).toMatchSnapshot()
-
   })
 
   it('renders with custom navigation', () => {

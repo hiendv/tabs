@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 function TabPanel (props) {
-  const className = props.item.props.className ? `${props.className} ${props.item.props.className}` : props.className
-
   return React.createElement(
     'div',
     {
-      className,
+      className: classNames(props.className, props.item.props.className),
       style: props.item.props.style
     },
     props.item.props.children
