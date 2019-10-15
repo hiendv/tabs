@@ -43,7 +43,11 @@ export default [
       name: 'reacttabs',
       format: 'iife',
       file: reslv('dist/iife.js'),
-      exports: 'named'
+      exports: 'named',
+      globals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM'
+      }
     },
     plugins: [
       resolve(),
@@ -59,6 +63,6 @@ export default [
         include: /node_modules/
       })
     ],
-    external: ['react', 'react-dom', '@hiendv/tabs', 'octicons-react', 'classnames']
+    external: ['react', 'react-dom']
   }
 ]
