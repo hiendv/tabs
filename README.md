@@ -9,7 +9,7 @@ Lightweight and flexible tabs component for the web.
 | **[tabs](/packages/tabs)** | [![npm](https://img.shields.io/npm/v/@hiendv/tabs.svg)](https://www.npmjs.com/package/@hiendv/tabs) |
 | **[vue-tabs](/packages/vue-tabs)** | [![npm](https://img.shields.io/npm/v/@hiendv/vue-tabs.svg)](https://www.npmjs.com/package/@hiendv/vue-tabs) |
 | **[vue-tabs-example](/packages/vue-tabs-example)** | Vue.js example |
-| **[react-tabs](#)** | Coming soon |
+| **[react-tabs](/packages/react-tabs)** | [![npm](https://img.shields.io/npm/v/@hiendv/react-tabs.svg)](https://www.npmjs.com/package/@hiendv/react-tabs) |
 | **[react-tabs-example](/packages/react-tabs-example)** | React.js example |
 
 ## Development & Testing
