@@ -103,17 +103,17 @@ export default class App extends Component {
   sourcePanelBindings () {
     return `import { Tabs, Tab } from '@hiendv/react-tabs'
 <Tabs>
-  <Tab title='Blue' class='bg-blue text-white'>
+  <Tab title='Blue' className='bg-blue text-white'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna.
   </Tab>
 
-  <Tab title='Green' class='bg-green text-white'>
+  <Tab title='Green' className='bg-green text-white'>
     Ut enim ad minim veniam, quis nostrud exercitation ullamco
     laboris nisi ut aliquip ex ea commodo consequat.
   </Tab>
 
-  <Tab title='Red' class='text-white' style={{ backgroundColor: '#ff3860' }}>
+  <Tab title='Red' className='text-white' style={{ backgroundColor: '#ff3860' }}>
     Duis aute irure dolor in reprehenderit in voluptate velit
     esse cillum dolore eu fugiat nulla pariatur.
   </Tab>
