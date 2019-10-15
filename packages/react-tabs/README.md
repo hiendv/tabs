@@ -60,6 +60,11 @@ Please see **[react-tabs-example](/packages/react-tabs-example)** for a complete
 |-------|-------|-------|-------|-------|
 | theme | Object | No | themeDefault - *[@hiendv/tabs](https://github.com/hiendv/tabs/tree/master/packages/tabs)* | Modulized style
 | show | Number | No | 0 | Initial active tab
+---
+
+| Event | Arguments | Description
+|-------|-------|-------|
+| onUpdate | (index) | Current active tab
 
 
 ### Tab
