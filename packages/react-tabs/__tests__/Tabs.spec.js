@@ -1,4 +1,3 @@
-/* global beforeAll afterAll describe expect it */
 import { setHash } from '@hiendv/tabs'
 import { HashRouter as Router, Link } from 'react-router-dom'
 import { act, Simulate } from 'react-dom/test-utils'
