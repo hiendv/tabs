@@ -13,7 +13,8 @@ Tab.propTypes = {
   hash: PropTypes.string,
   end: PropTypes.bool,
   ghost: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  children: PropTypes.node
 }
 
 Tab.defaultProps = {

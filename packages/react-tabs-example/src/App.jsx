@@ -3,7 +3,7 @@ import { Tabs, Tab, themeDefault, themeDark } from '@hiendv/react-tabs'
 import Snippet from './Snippet.jsx'
 import Sources from './sources'
 import Octicon, { globe, zap, beaker, flame } from 'octicons-react'
-const { sourceFull, sourceSimple, sourceCustomNavigation, sourceCustomTheme } = Sources
+const { sourceFull, sourceSimple, sourceCustomNavigation, sourceCustomTheme, sourcePanelBindings } = Sources
 
 export default class App extends Component {
   constructor () {
@@ -130,6 +130,29 @@ export default class App extends Component {
               </Tabs>
               <hr />
               <Snippet code={sourceCustomTheme()} style={{ maxHeight: 400 }} />
+            </div>
+          </section>
+          <section>
+            <h3>Custom panel class & style bindings</h3>
+            <div style={{ backgroundColor: '#fff', padding: '1rem' }}>
+              <Tabs>
+                <Tab title='Blue' class='bg-blue text-white'>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna.
+                </Tab>
+
+                <Tab title='Green' class='bg-green text-white'>
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </Tab>
+
+                <Tab title='Red' class='text-white' style={{ backgroundColor: '#ff3860' }}>
+                  Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur.
+                </Tab>
+              </Tabs>
+              <hr/>
+              <Snippet code={sourcePanelBindings()} style={{ maxHeight: 400 }} />
             </div>
           </section>
           <section>

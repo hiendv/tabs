@@ -63,3 +63,14 @@ h1 > a:hover {
 .my-item.active {
   background-color: #5e65a8;
 }
+.bg-blue {
+  background-color: #3273dc;
+}
+
+.bg-green {
+  background-color: #23d160;
+}
+
+.text-white {
+  color: #fff!important;
+}
