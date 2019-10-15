@@ -1,7 +1,7 @@
 {
   "name": "@hiendv/vue-tabs",
   "description": "Tabs component for Vue.js",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "main": "dist/common.js",
   "module": "dist/es.js",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
@@ -10,7 +10,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@hiendv/tabs": "^0.2.8",
+    "@hiendv/tabs": "^0.3.0",
     "octicons-vue": "^0.18.10"
   },
   "files": [

@@ -1,9 +1,9 @@
 {
   "name": "@hiendv/react-tabs-example",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
-    "@hiendv/react-tabs": "^0.2.8",
+    "@hiendv/react-tabs": "^0.3.0",
     "core-js": "^2.6.9",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
