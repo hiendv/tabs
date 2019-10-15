@@ -3,8 +3,10 @@ import { HashRouter as Router, Link } from 'react-router-dom'
 import { act, Simulate } from 'react-dom/test-utils'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { config } from 'react-transition-group'
 import { Tabs, Tab } from '../src/main.js'
 
+config.disabled = true
 let container
 
 beforeAll(() => {
@@ -55,6 +57,20 @@ describe('Tabs', () => {
     })
 
     expect(container.innerHTML).toMatchSnapshot()
+  })
+
+  it('renders with panel custom bindings', () => {
+    act(() => {
+      ReactDOM.render(<Tabs show={1}>
+        <Tab title='Foo' style={{backgroundColor: '#f5f5f5'}} className="foobar"><div>One Content</div></Tab>
+        <Tab title='Bar'><div>Two Content</div></Tab>
+      </Tabs>, container)
+    })
+
+    expect(container.innerHTML).toMatchSnapshot()
+    Simulate.click(container.querySelectorAll('a')[0])
+    expect(container.innerHTML).toMatchSnapshot()
+
   })
 
   it('renders with custom navigation', () => {
