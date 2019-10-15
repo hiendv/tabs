@@ -28,6 +28,9 @@ export default class Tabs extends React.Component {
   items () {
     return this.props.children.map(c => c.props)
   }
+  activePanel () {
+    return this.props.children.find((panel, i) => this.isActive(i))
+  }
   currentHash () {
     return (this.props.route ? this.props.route.hash : window.location.hash).substring(1)
   }
@@ -84,11 +87,11 @@ export default class Tabs extends React.Component {
   }
   render () {
     const theme = this.props.theme
+    const className = this.props.className ? `${this.props.className} ${theme.tabs}` : theme.tabs
+
     return (
-      <div className={`${this.props.className || ''} ${theme.tabs}`}>
-        {this.props.navRenderer &&
-          this.props.navRenderer(this.items(), this)
-        }
+      <div className={className}>
+        {this.props.navRenderer && this.props.navRenderer(this.items(), this)}
         {!this.props.navRenderer &&
           <nav className={theme.items}>
             {
@@ -98,10 +101,12 @@ export default class Tabs extends React.Component {
                   key={i}
                   href={item.hash || '#'}
                   onClick={(e) => this.handleClick(e, i)}>
-                  {item.icon.attrs() &&
-                    <Octicon icon={item.icon} />
+                  {item.icon.attrs() ? (
+                    <React.Fragment>
+                      <Octicon icon={item.icon} className={theme.octicon}/> {item.title}
+                    </React.Fragment>
+                  ) : item.title
                   }
-                  {item.title}
                 </a>
               ))
             }
@@ -113,9 +118,7 @@ export default class Tabs extends React.Component {
             addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
             classNames='slide-down'
             timeout={150}>
-            <TabPanel key={this.state.active} className={`${theme.panel} ${this.items().length ? (this.items()[this.state.active].className || '') : ''} slide-down`}>
-              {this.items().length && this.items()[this.state.active].children}
-            </TabPanel>
+            <TabPanel key={this.state.active} className={`${theme.panel} slide-down`} item={this.activePanel()}></TabPanel>
           </CSSTransition>
         </SwitchTransition>}
       </div>
@@ -126,11 +129,17 @@ export default class Tabs extends React.Component {
 Tabs.propTypes = {
   theme: PropTypes.object,
   show: PropTypes.number,
-  children: PropTypes.arrayOf(Tab)
+  children: PropTypes.arrayOf(Tab),
+  onUpdate: PropTypes.func,
+  className: PropTypes.string,
+  navRenderer: PropTypes.func
 }
 
 Tabs.defaultProps = {
   theme: themeDefault,
   show: 0,
-  children: []
+  children: [],
+  onUpdate: () => {},
+  className: '',
+  navRenderer: null
 }
