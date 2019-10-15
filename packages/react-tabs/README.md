@@ -30,22 +30,24 @@ npm install --save @hiendv/react-tabs
 
 ```jsx
 import React, { Component } from 'react'
-import { Tabs, Tab, themeDefault } from '@hiendv/react-tabs'
+import { Tabs, Tab } from '@hiendv/react-tabs'
 export default class App extends Component {
   render () {
     return (
-      <Tabs theme={themeDefault}>
-        <Tab title='Foo'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore.
+      <Tabs>
+        <Tab title='First'>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.
         </Tab>
 
-        <Tab title='Bar'>
-          Refresh and I&apos;m still here because the URL fragment is <strong>#bar</strong> now.
+        <Tab title='Second'>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
         </Tab>
 
-        <Tab title='Qux'>
-          Hi, my name is <strong>#qux</strong>
+        <Tab title='Third'>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur.
         </Tab>
       </Tabs>
     )
