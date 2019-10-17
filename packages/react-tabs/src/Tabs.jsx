@@ -134,7 +134,9 @@ Tabs.propTypes = {
   children: PropTypes.arrayOf(Tab),
   onUpdate: PropTypes.func,
   className: PropTypes.string,
-  navRenderer: PropTypes.func
+  navRenderer: PropTypes.func,
+  route: PropTypes.object,
+  router: PropTypes.object
 }
 
 Tabs.defaultProps = {
