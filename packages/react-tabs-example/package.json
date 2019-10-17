@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@hiendv/react-tabs": "^0.3.0",
-    "core-js": "^2.6.9",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",

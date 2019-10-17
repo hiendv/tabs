@@ -10,5 +10,6 @@ module.exports = {
     react: {
       version: 'detected'
     }
-  }
+  },
+  parser: 'babel-eslint'
 }
