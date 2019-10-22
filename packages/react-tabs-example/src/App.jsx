@@ -3,7 +3,41 @@ import { Tabs, Tab, themeDefault, themeDark } from '@hiendv/react-tabs'
 import Snippet from './Snippet.jsx'
 import Sources from './sources'
 import Octicon, { globe, zap, beaker, flame } from 'octicons-react'
-const { sourceFull, sourceSimple, sourceCustomNavigation, sourceCustomTheme, sourcePanelBindings } = Sources
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom'
+
+const TabsRouter = withRouter(Tabs)
+const { sourceFull, sourceSimple, sourceRouter, sourceCustomTheme, sourcePanelBindings, sourceCustomNavigation } = Sources
+
+function Normal () {
+  return <p>Nothing to see here. Move to the next page.</p>
+}
+
+function WithTabs () {
+  return (
+    <TabsRouter>
+      <Tab title='First' hash="first">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore.
+      </Tab>
+
+      <Tab title='Second' hash="second">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </Tab>
+
+      <Tab title='Third' hash="last">
+        Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur.
+      </Tab>
+    </TabsRouter>
+  )
+}
 
 export default class App extends Component {
   constructor () {
@@ -107,6 +141,29 @@ export default class App extends Component {
               </Tabs>
               <hr />
               <Snippet code={sourceFull()} style={{ maxHeight: 400 }} />
+            </div>
+          </section>
+          <section>
+            <h3>React Router hooks</h3>
+            <div style={{ padding: '1rem', backgroundColor: this.state.themeText === 'Default' ? '#fff' : '#313131' }}>
+              <Router>
+                <nav>
+                  <Link to="/">Normal</Link> - <Link to="/with-tabs">With Tabs</Link>
+                </nav>
+                <div>
+                  <hr />
+                  <Switch>
+                    <Route exact path="/">
+                      <Normal />
+                    </Route>
+                    <Route path="/with-tabs">
+                      <WithTabs />
+                    </Route>
+                  </Switch>
+                </div>
+              </Router>
+              <hr />
+              <Snippet code={sourceRouter()} style={{ maxHeight: 400 }} />
             </div>
           </section>
           <section>

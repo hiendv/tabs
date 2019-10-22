@@ -23,8 +23,15 @@ export default class Tabs extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   componentDidMount () {
-    this.setActive(this.props.show)
+    this.setState({ active: this.props.show })
     this.syncActiveHash()
+  }
+  componentDidUpdate (oldProps) {
+    if (this.props.show === oldProps.show) {
+      return
+    }
+
+    this.setState({ active: this.props.show })
   }
   items () {
     return this.props.children.map(c => c.props)
@@ -33,7 +40,7 @@ export default class Tabs extends React.Component {
     return this.props.children.find((panel, i) => this.isActive(i))
   }
   currentHash () {
-    return (this.props.route ? this.props.route.hash : window.location.hash).substring(1)
+    return (this.props.location ? this.props.location.hash : window.location.hash).substring(1)
   }
   isActive (index) {
     return this.state.active === index
@@ -45,12 +52,13 @@ export default class Tabs extends React.Component {
       return
     }
 
-    if (this.props.route && !hash && !item.hash) {
+    if (this.props.history && !hash && !item.hash) {
       return
     }
 
-    if (this.props.route) {
-      this.props.router.replace({ hash: item.hash })
+    if (this.props.history) {
+      this.props.history.replace({ hash: item.hash })
+      return
     }
 
     setHash(item.hash)
@@ -70,6 +78,7 @@ export default class Tabs extends React.Component {
     this.setState({
       active: index
     })
+
     if (this.props.onUpdate) {
       this.props.onUpdate(index)
     }
@@ -135,8 +144,8 @@ Tabs.propTypes = {
   onUpdate: PropTypes.func,
   className: PropTypes.string,
   navRenderer: PropTypes.func,
-  route: PropTypes.object,
-  router: PropTypes.object
+  location: PropTypes.object,
+  history: PropTypes.object
 }
 
 Tabs.defaultProps = {

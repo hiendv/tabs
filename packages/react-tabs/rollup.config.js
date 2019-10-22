@@ -35,7 +35,7 @@ export default [
         include: /node_modules/
       })
     ],
-    external: ['react', 'react-dom', '@hiendv/tabs', 'octicons-react', 'classnames']
+    external: ['react', 'react-dom', 'react-router-dom', '@hiendv/tabs', 'octicons-react', 'classnames']
   },
   {
     input: reslv('src/main.js'),
@@ -63,6 +63,6 @@ export default [
         include: /node_modules/
       })
     ],
-    external: ['react', 'react-dom']
+    external: ['react', 'react-dom', 'react-router-dom']
   }
 ]

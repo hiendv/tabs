@@ -147,7 +147,7 @@ describe('Tabs', () => {
       </Router>, container)
     })
 
-    expect(window.location.toString()).toEqual('http://localhost/')
+    expect(window.location.toString()).toEqual('http://localhost/#/')
     expect(container.innerHTML).toMatchSnapshot()
 
     Simulate.click(container.querySelectorAll('a')[0])
