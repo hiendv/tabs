@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@hiendv/vue-tabs": "^0.3.0",
-    "core-js": "^3.3.3",
+    "core-js": "^3.3.5",
     "vue": "^2.6.10"
   },
   "postcss": {
