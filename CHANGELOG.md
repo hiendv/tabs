@@ -1,9 +1,50 @@
-# [](https://github.com/hiendv/tabs/compare/v0.2.7...v) (2019-09-25)
+# [](https://github.com/hiendv/tabs/compare/v0.3.1...v) (2019-12-04)
+
+
+
+## [0.3.1](https://github.com/hiendv/tabs/compare/v0.3.0...v0.3.1) (2019-10-30)
+
+
+### Bug Fixes
+
+* rework react router and props reactivity ([69ae0a0](https://github.com/hiendv/tabs/commit/69ae0a0))
+
+
+
+# [0.3.0](https://github.com/hiendv/tabs/compare/v0.2.8...v0.3.0) (2019-10-15)
+
+
+### Bug Fixes
+
+* **react-tabs:** minimize iife deps ([1da4866](https://github.com/hiendv/tabs/commit/1da4866))
+* **react-tabs:** use className instead of class ([bf24a01](https://github.com/hiendv/tabs/commit/bf24a01))
+* **react-tabs:** use classNames ([528996c](https://github.com/hiendv/tabs/commit/528996c))
+
+
+### Features
+
+* add react-tabs and react-tabs-example  ([e4c0ee5](https://github.com/hiendv/tabs/commit/e4c0ee5)), closes [#1](https://github.com/hiendv/tabs/issues/1)
+* **react-tabs:** add custom panel class & style bindings ([b3d7863](https://github.com/hiendv/tabs/commit/b3d7863))
+* **tabs:** add themes ([faa68f4](https://github.com/hiendv/tabs/commit/faa68f4))
+
+
+
+## [0.2.8](https://github.com/hiendv/tabs/compare/v0.2.7...v0.2.8) (2019-10-01)
+
+
+### Bug Fixes
+
+* **tabs:** add defensive check for deepmerge (non-object source) ([3e0f938](https://github.com/hiendv/tabs/commit/3e0f938))
 
 
 ### Code Refactoring
 
 * **tabs:** remove the iife output ([873e3c9](https://github.com/hiendv/tabs/commit/873e3c9))
+
+
+### Features
+
+* add custom panel class & style bindings ([d545f5f](https://github.com/hiendv/tabs/commit/d545f5f))
 
 
 ### BREAKING CHANGES
