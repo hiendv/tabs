@@ -2,27 +2,21 @@
 
 exports[`Tabs renders <tab> without slots 1`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">
-      <!----> Title</a><a href="#" class="item">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item item--active">Title</a><a href="#" class="item">Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
 </div>
 `;
 
 exports[`Tabs renders <tab> without slots 2`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item">
-      <!----> Title</a><a href="#" class="item item--active">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item">Title</a><a href="#" class="item item--active">Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
 </div>
 `;
 
 exports[`Tabs renders 1`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">
-      <!----> One</a><a href="#" class="item">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>
@@ -31,9 +25,7 @@ exports[`Tabs renders 1`] = `
 
 exports[`Tabs renders 2`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item">
-      <!----> One</a><a href="#" class="item item--active">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>Two Content</div>
   </div>
@@ -42,9 +34,7 @@ exports[`Tabs renders 2`] = `
 
 exports[`Tabs renders end <tab> 1`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">
-      <!----> One</a><a href="#" class="item item--end">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item item--end">Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>
@@ -53,9 +43,7 @@ exports[`Tabs renders end <tab> 1`] = `
 
 exports[`Tabs renders end <tab> 2`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item">
-      <!----> One</a><a href="#" class="item item--active item--end">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active item--end">Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>Two Content</div>
   </div>
@@ -64,10 +52,7 @@ exports[`Tabs renders end <tab> 2`] = `
 
 exports[`Tabs renders ghost <tab> 1`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">
-      <!----> One</a><a href="#" class="item">
-      <!----> Two</a><a href="#" class="item">
-      <!----> Ghost</a></nav>
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><a href="#" class="item">Ghost</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>
@@ -76,10 +61,7 @@ exports[`Tabs renders ghost <tab> 1`] = `
 
 exports[`Tabs renders ghost <tab> 2`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">
-      <!----> One</a><a href="#" class="item">
-      <!----> Two</a><a href="#" class="item">
-      <!----> Ghost</a></nav>
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><a href="#" class="item">Ghost</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>
@@ -106,9 +88,7 @@ exports[`Tabs renders with custom navigation 2`] = `
 
 exports[`Tabs renders with custom theme 1`] = `
 <div class="one">
-  <nav class="two"><a href="#" class="three three--active">
-      <!----> One</a><a href="#" class="three">
-      <!----> Two</a></nav>
+  <nav class="two"><a href="#" class="three three--active">One</a><a href="#" class="three">Two</a></nav>
   <div class="four" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>
@@ -117,9 +97,7 @@ exports[`Tabs renders with custom theme 1`] = `
 
 exports[`Tabs renders with hashes 1`] = `
 <div class="tabs">
-  <nav class="items"><a href="#one" class="item">
-      <!----> One</a><a href="#two" class="item item--active">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>Two Content</div>
   </div>
@@ -128,11 +106,20 @@ exports[`Tabs renders with hashes 1`] = `
 
 exports[`Tabs renders with hashes from vue-router 1`] = `
 <div class="tabs">
-  <nav class="items"><a href="#one" class="item item--active">
-      <!----> One</a><a href="#two" class="item">
-      <!----> Two</a><a href="#" class="item">
-      <!----> Three</a><a href="#" class="item">
-      <!----> Four</a></nav>
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><a href="#" class="item">Three</a><a href="#" class="item">Four</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with icons 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active"><svg version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="octicon octicon-alert octicon">
+        <path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+      </svg> <span>One</span></a><a href="#" class="item"><svg version="1.1" width="10" height="16" viewBox="0 0 10 16" aria-hidden="true" class="octicon octicon-zap octicon">
+        <path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path>
+      </svg> <span>Two</span></a></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>
@@ -141,9 +128,7 @@ exports[`Tabs renders with hashes from vue-router 1`] = `
 
 exports[`Tabs renders with panel custom bindings 1`] = `
 <div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">
-      <!----> One</a><a href="#" class="item">
-      <!----> Two</a></nav>
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
   <div class="foobar panel" style="background-color: rgb(245, 245, 245);" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>

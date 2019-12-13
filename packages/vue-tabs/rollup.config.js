@@ -62,7 +62,9 @@ export default [
           }
         }
       }),
-      buble()
+      buble({
+        objectAssign: 'Object.assign'
+      })
     ]
   }
 ]

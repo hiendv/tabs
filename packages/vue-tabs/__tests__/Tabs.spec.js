@@ -1,6 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import { setHash } from '@hiendv/tabs'
 import VueRouter from 'vue-router'
+import { alert, zap } from 'octicons-vue'
 import { Tabs, Tab } from '../src/main.js'
 
 let localVue = null
@@ -140,6 +141,24 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
     wrapper.find('a').trigger('click')
     expect(window.location.hash).toEqual('#one')
+  })
+
+  it('renders with icons', () => {
+    const wrapper = mount(Tabs, {
+      mocks: {
+        alert,
+        zap
+      },
+      slots: {
+        default: `
+          <tab title="One" :icon="alert"><div>One Content</div></tab>
+          <tab title="Two" :icon="zap"><div>Two Content</div></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders with hashes from vue-router', () => {

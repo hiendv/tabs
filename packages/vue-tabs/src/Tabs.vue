@@ -2,18 +2,15 @@
   <div :class="theme.tabs">
     <slot name="nav" :items="items">
       <nav :class="theme.items">
-        <a
-          v-for="(item, index) in items" :key="index"
+        <tab-item
+          v-for="(item, index) in items" :key="index" :parent="parents[index]"
           :class="{
             [theme.item]: true,
             [theme['item--active']]: isActive(index),
             [theme['item--end']]: item.end
-          }" :href="`#${item.hash || ''}`"
-          @click.prevent="itemClicked(index)" v-on="listeners[index]"
-        ><octicon
-          v-if="item.icon.attrs()" :icon="item.icon"
-          :class-name="theme.octicon"
-        /> {{ item.title }}</a>
+          }" :item="item" @click.prevent="itemClicked(index)"
+          v-on="listeners[index]"
+        />
       </nav>
     </slot>
     <transition
@@ -31,11 +28,11 @@
 @import "assets/transitions/slide-down";
 </style>
 <script>
-import { Octicon } from 'octicons-vue'
 import { setHash, themeDefault } from '@hiendv/tabs'
+import TabItem from './TabItem'
 import TabPanel from './TabPanel'
 export default {
-  components: { TabPanel, Octicon },
+  components: { TabItem, TabPanel },
   props: {
     theme: {
       type: Object,
@@ -54,12 +51,20 @@ export default {
       slots: []
     }
   },
+  provide () {
+    return {
+      theme: this.theme
+    }
+  },
   computed: {
     validChildren () {
       return this.slots.filter(vnode => vnode && vnode.fnOptions && vnode.fnOptions.name === 'Tab' && vnode.data)
     },
     items () {
       return this.validChildren.map(vnode => vnode.data.props)
+    },
+    parents () {
+      return this.validChildren.map(vnode => vnode.data.scopedSlots.parent)
     },
     listeners () {
       return this.validChildren.map(vnode => vnode.data.listeners)
