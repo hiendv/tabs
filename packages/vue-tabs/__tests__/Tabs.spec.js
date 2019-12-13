@@ -4,10 +4,16 @@ import VueRouter from 'vue-router'
 import { Tabs, Tab } from '../src/main.js'
 
 let localVue = null
+const transitionStub = () => ({
+  render: function (h) {
+    return this.$options._renderChildren
+  }
+})
 
 beforeAll(() => {
   localVue = createLocalVue()
   localVue.component('tab', Tab)
+  localVue.component('transition', transitionStub())
 })
 
 afterAll(() => {
@@ -15,7 +21,7 @@ afterAll(() => {
 })
 
 describe('Tabs', () => {
-  it('renders', () => {
+  it('renders', async () => {
     const wrapper = mount(Tabs, {
       slots: {
         default: `
@@ -29,12 +35,13 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
 
     wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
   })
 
   it('renders without slots', () => {
-    const wrapper = mount(Tabs)
+    const wrapper = mount(Tabs, { stubs: { transition: transitionStub() } })
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -75,7 +82,7 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('renders with custom navigation', () => {
+  it('renders with custom navigation', async () => {
     const wrapper = mount(Tabs, {
       propsData: {
         show: 1
@@ -110,7 +117,7 @@ describe('Tabs', () => {
     })
 
     wrapper.find('a').trigger('click')
-
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.props()).toMatchObject({
       show: 0
@@ -169,7 +176,7 @@ describe('Tabs', () => {
     expect(window.location.toString()).toEqual('http://localhost/#/')
   })
 
-  it('renders <tab> without slots', () => {
+  it('renders <tab> without slots', async () => {
     const wrapper = mount(Tabs, {
       slots: {
         default: `
@@ -183,6 +190,7 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
 
     wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
   })
@@ -206,7 +214,7 @@ describe('Tabs', () => {
     expect(wrapper.emitted()['update:show']).toBeFalsy()
   })
 
-  it('renders end <tab>', () => {
+  it('renders end <tab>', async () => {
     const wrapper = mount(Tabs, {
       slots: {
         default: `
@@ -220,6 +228,7 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
 
     wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
   })
