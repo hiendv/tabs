@@ -252,7 +252,7 @@ describe('Tabs', () => {
     expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
   })
 
-  it('renders with custom individual navigation', async () => {
+  it('renders with individual custom navigation', async () => {
     const wrapper = mount(Tabs, {
       slots: {
         default: `
@@ -275,7 +275,7 @@ describe('Tabs', () => {
     expect(wrapper.emitted()['update:show']).toStrictEqual([[2]])
   })
 
-  it('renders with custom individual navigation raw', async () => {
+  it('renders with individual custom navigation without using data', async () => {
     const wrapper = mount(Tabs, {
       slots: {
         default: `
