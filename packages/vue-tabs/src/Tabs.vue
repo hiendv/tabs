@@ -3,7 +3,7 @@
     <slot name="nav" :items="items">
       <nav :class="theme.items">
         <tab-item
-          v-for="(item, index) in items" :key="index" :parent="parents[index]"
+          v-for="(item, index) in items" :key="index" :nav="navs[index]"
           :class="{
             [theme.item]: true,
             [theme['item--active']]: isActive(index),
@@ -63,8 +63,8 @@ export default {
     items () {
       return this.validChildren.map(vnode => vnode.data.props)
     },
-    parents () {
-      return this.validChildren.map(vnode => vnode.data.scopedSlots.parent)
+    navs () {
+      return this.validChildren.map(vnode => vnode.data.scopedSlots.nav)
     },
     listeners () {
       return this.validChildren.map(vnode => vnode.data.listeners)

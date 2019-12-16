@@ -4,7 +4,7 @@ export default {
   functional: true,
   inject: ['theme'],
   props: {
-    parent: {
+    nav: {
       type: Function,
       default: undefined
     },
@@ -15,8 +15,8 @@ export default {
   },
   render (h, ctx) {
     const { data, props, injections } = ctx
-    if (props.parent) {
-      return props.parent(data)
+    if (typeof props.nav === 'function') {
+      return props.nav(data)
     }
 
     const children = [
