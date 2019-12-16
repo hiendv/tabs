@@ -5,7 +5,7 @@
   "dependencies": {
     "@hiendv/vue-tabs": "^0.3.0",
     "core-js": "^3.5.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   },
   "postcss": {
     "plugins": {
