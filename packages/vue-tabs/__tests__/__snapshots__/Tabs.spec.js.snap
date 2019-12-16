@@ -68,6 +68,42 @@ exports[`Tabs renders ghost <tab> 2`] = `
 </div>
 `;
 
+exports[`Tabs renders with custom individual navigation 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button class="item">Foobar</button></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with custom individual navigation 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item">Two</a><button class="item item--active">Foobar</button></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>Three Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with custom individual navigation raw 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with custom individual navigation raw 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
 exports[`Tabs renders with custom navigation 1`] = `
 <div class="tabs">
   <div><a>One</a><a>Two</a></div>

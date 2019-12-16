@@ -251,4 +251,50 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.emitted()['update:show']).toStrictEqual([[1]])
   })
+
+  it('renders with custom individual navigation', async () => {
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+          <tab>
+            <button slot="nav" slot-scope="data" :class="data.class" @click.prevent="data.on.click">Foobar</button>
+            <div>Three Content</div>
+          </tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.find('button').trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.emitted()['update:show']).toStrictEqual([[2]])
+  })
+
+  it('renders with custom individual navigation raw', async () => {
+    const wrapper = mount(Tabs, {
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+          <tab>
+            <button slot="nav">Foobar</button>
+            <div>Three Content</div>
+          </tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.find('button').trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.emitted()['update:show']).toBeFalsy()
+  })
 })
