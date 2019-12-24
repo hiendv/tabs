@@ -12,7 +12,7 @@
   "dependencies": {
     "@hiendv/tabs": "^0.3.0",
     "classnames": "^2.2.6",
-    "octicons-react": "^0.18.11"
+    "octicons-react": "^1.0.0"
   },
   "files": [
     "dist",

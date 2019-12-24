@@ -68,42 +68,6 @@ exports[`Tabs renders ghost <tab> 2`] = `
 </div>
 `;
 
-exports[`Tabs renders with custom individual navigation 1`] = `
-<div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button class="item">Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
-</div>
-`;
-
-exports[`Tabs renders with custom individual navigation 2`] = `
-<div class="tabs">
-  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item">Two</a><button class="item item--active">Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>Three Content</div>
-  </div>
-</div>
-`;
-
-exports[`Tabs renders with custom individual navigation raw 1`] = `
-<div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
-</div>
-`;
-
-exports[`Tabs renders with custom individual navigation raw 2`] = `
-<div class="tabs">
-  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
-</div>
-`;
-
 exports[`Tabs renders with custom navigation 1`] = `
 <div class="tabs">
   <div><a>One</a><a>Two</a></div>
@@ -156,6 +120,42 @@ exports[`Tabs renders with icons 1`] = `
       </svg> <span>One</span></a><a href="#" class="item"><svg version="1.1" width="10" height="16" viewBox="0 0 10 16" aria-hidden="true" class="octicon octicon-zap octicon">
         <path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path>
       </svg> <span>Two</span></a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with individual custom navigation 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button class="item">Foobar</button></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with individual custom navigation 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item">Two</a><button class="item item--active">Foobar</button></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>Three Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with individual custom navigation without using data 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <div>One Content</div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with individual custom navigation without using data 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
   <div class="panel" tag="div" name="slide-down" mode="out-in">
     <div>One Content</div>
   </div>
