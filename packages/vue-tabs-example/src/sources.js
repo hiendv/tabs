@@ -31,18 +31,35 @@ export default {
   sourceFull () {
     return `<template>
   <tabs>
-    <tab title="Foo">
+    <tab title="Foo" :icon="globe">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
       sed do eiusmod tempor incididunt ut labore et dolore.
     </tab>
 
-    <tab title="Bar" hash="bar">
+    <tab
+      title="Bar" hash="bar"
+      :icon="zap"
+    >
       Refresh and I'm still here because the URL fragment is
       <strong>#bar</strong> now.
     </tab>
 
-    <tab title="Qux" hash="qux">
-      Hi, my name is <strong>#qux</strong>
+    <tab
+      title="Qux" hash="qux"
+      :icon="beaker"
+    >
+      Hi, my name is <strong>#qux</strong>.
+    </tab>
+
+    <tab hash="fred">
+      <a
+        slot="nav"
+        slot-scope="data" href="#"
+        :class="data.class" @click.prevent="click($event, data.on.click)"
+      ><octicon :icon="star" /> <span>Fred</span></a>
+
+      <p>I'm kinda different because I extend the default click event 😂.</p>
+      <p>See the <code>console</code> for easter eggs.</p>
     </tab>
 
     <tab
@@ -52,12 +69,13 @@ export default {
   </tabs>
 </template>
 <script>
-import { globe, zap, beaker, flame } from 'octicons-vue'
+import { globe, zap, beaker, flame, star, Octicon } from 'octicons-vue'
 import { Tabs, Tab } from '@hiendv/vue-tabs'
 export default {
   components: {
     Tabs,
-    Tab
+    Tab,
+    Octicon
   },
   data () {
     return {
@@ -65,6 +83,17 @@ export default {
       zap,
       beaker,
       flame
+    }
+  },
+  methods: {
+    click (e, next) {
+      console.group('🤖: Beep boop')
+      console.log('❗', 'You clicked the tab item')
+      console.log('❗', 'I\\'m sending the event away')
+      next(e)
+      console.log('❗', 'Your tab should be on by now')
+      console.log('❗', 'GL & HF')
+      console.groupEnd()
     }
   }
 }

@@ -33,7 +33,7 @@
         </div>
       </section>
       <section>
-        <h3>Different icon, hash, push-to-right & pure button</h3>
+        <h3>Icon, hash, push-to-right, pure & customized tab item</h3>
         <div style="background-color: #fff; padding: 1rem">
           <tabs>
             <tab title="Foo" :icon="globe">
@@ -53,7 +53,18 @@
               title="Qux" hash="qux"
               :icon="beaker"
             >
-              Hi, my name is <strong>#qux</strong>
+              Hi, my name is <strong>#qux</strong>.
+            </tab>
+
+            <tab hash="fred">
+              <a
+                slot="nav"
+                slot-scope="data" href="#"
+                :class="data.class" @click.prevent="click($event, data.on.click)"
+              ><octicon :icon="star" /> <span>Fred</span></a>
+
+              <p>I'm kinda different because I extend the default click event 😂.</p>
+              <p>See the <code>console</code> for easter eggs.</p>
             </tab>
 
             <tab
@@ -173,7 +184,7 @@
 </template>
 
 <script>
-import { globe, zap, beaker, flame } from 'octicons-vue'
+import { globe, zap, beaker, flame, star, Octicon } from 'octicons-vue'
 import { Tabs, Tab, themeDefault, themeDark, themeMaterial, themeMaterialDark, themeMetro, themeMetroDark } from '@hiendv/vue-tabs'
 import Snippet from './Snippet.vue'
 import sources from './sources'
@@ -182,6 +193,7 @@ export default {
   components: {
     Tabs,
     Tab,
+    Octicon,
     Snippet
   },
   data () {
@@ -242,11 +254,23 @@ export default {
     },
     flame () {
       return flame
+    },
+    star () {
+      return star
     }
   },
   methods: {
     switchTheme (i) {
       this.activeTheme = i
+    },
+    click (e, next) {
+      console.group('🤖: Beep boop')
+      console.log('❗', 'You clicked the tab item')
+      console.log('❗', 'I\'m sending the event away')
+      next(e)
+      console.log('❗', 'Your tab should be on by now')
+      console.log('❗', 'GL & HF')
+      console.groupEnd()
     }
   }
 }
