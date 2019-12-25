@@ -45,7 +45,7 @@ export default [
       file: reslv('dist/iife.js'),
       exports: 'named',
       globals: {
-        'react': 'React',
+        react: 'React',
         'react-dom': 'ReactDOM'
       }
     },

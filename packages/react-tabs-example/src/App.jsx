@@ -57,6 +57,7 @@ export default class App extends Component {
     this.switchTheme = this.switchTheme.bind(this)
     this.navRenderer = this.navRenderer.bind(this)
   }
+
   switchTheme (e) {
     const isDefault = this.state.themeText === 'Default'
     this.setState({
@@ -64,6 +65,7 @@ export default class App extends Component {
       themeText: isDefault ? 'Dark' : 'Default'
     })
   }
+
   navRenderer (items, self) {
     return (
       <nav className='my-items'>
@@ -84,6 +86,7 @@ export default class App extends Component {
       </nav>
     )
   }
+
   render () {
     return (
       <div id='app'>

@@ -3,12 +3,14 @@
     <slot name="nav" :items="items">
       <nav :class="theme.items">
         <tab-item
-          v-for="(item, index) in items" :key="index" :nav="navs[index]"
+          v-for="(item, index) in items" :key="index"
+          :nav="navs[index]"
           :class="{
             [theme.item]: true,
             [theme['item--active']]: isActive(index),
             [theme['item--end']]: item.end
-          }" :item="item" @click.prevent="itemClicked(index)"
+          }" :item="item"
+          @click.prevent="itemClicked(index)"
           v-on="listeners[index]"
         />
       </nav>

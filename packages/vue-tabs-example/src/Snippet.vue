@@ -34,7 +34,7 @@ export default {
     }
 
     const codeBlock = h('code', {
-      class: [ ctx.data.class, className ],
+      class: [ctx.data.class, className],
       domProps: {
         innerHTML: Prism.highlight(code || '', prismLanguage)
       }
@@ -44,7 +44,7 @@ export default {
       return codeBlock
     }
 
-    return h('pre', { class: [ ctx.data.class, className ], style: ctx.data.staticStyle }, [ codeBlock ])
+    return h('pre', { class: [ctx.data.class, className], style: ctx.data.staticStyle }, [codeBlock])
   }
 }
 </script>

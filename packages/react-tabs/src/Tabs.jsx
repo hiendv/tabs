@@ -22,10 +22,12 @@ export default class Tabs extends React.Component {
     this.setActive = this.setActive.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
+
   componentDidMount () {
     this.setState({ active: this.props.show })
     this.syncActiveHash()
   }
+
   componentDidUpdate (oldProps) {
     if (this.props.show === oldProps.show) {
       return
@@ -33,18 +35,23 @@ export default class Tabs extends React.Component {
 
     this.setState({ active: this.props.show })
   }
+
   items () {
     return this.props.children.map(c => c.props)
   }
+
   activePanel () {
     return this.props.children.find((panel, i) => this.isActive(i))
   }
+
   currentHash () {
     return (this.props.location ? this.props.location.hash : window.location.hash).substring(1)
   }
+
   isActive (index) {
     return this.state.active === index
   }
+
   setHash (index) {
     const hash = this.currentHash()
     const item = this.items()[index]
@@ -63,6 +70,7 @@ export default class Tabs extends React.Component {
 
     setHash(item.hash)
   }
+
   syncActiveHash () {
     const hash = this.currentHash()
     const index = this.items().findIndex(el => {
@@ -73,6 +81,7 @@ export default class Tabs extends React.Component {
 
     this.setActive(index)
   }
+
   setActive (index) {
     this.setHash(index)
     this.setState({
@@ -83,6 +92,7 @@ export default class Tabs extends React.Component {
       this.props.onUpdate(index)
     }
   }
+
   handleClick (e, index) {
     e.preventDefault()
     const item = this.items()[index]
@@ -95,6 +105,7 @@ export default class Tabs extends React.Component {
 
     return this.setActive(index)
   }
+
   render () {
     const theme = this.props.theme
     return (
