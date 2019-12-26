@@ -66,23 +66,30 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
 
 ## Documentation
 ### Tabs
+#### Props
 | Property | Type | Required | Default | Description
 |-------|-------|-------|-------|-------|
 | theme | Object | No | themeDefault - *[@hiendv/tabs](https://github.com/hiendv/tabs/tree/master/packages/tabs)* | Modulized style
 | show | Number | No | 0 | Initial active tab
 
----
+
+#### Methods
 
 | Method | Arguments | Return | Description
 |-------|-------|-------|-------|
 | loadSlots | () | No | Manually reload the slots
 
----
+
+#### Events
 
 | Event | Arguments | Description
 |-------|-------|-------|
 | update:show | (index) | Current active tab
 
+#### Slots
+| Syntax (2.6.0+) | Props | Deprecated syntax
+|-------|-------|-------|
+| v-slot:nav="props" | { items: Array } | slot="nav" slot-scope="props"
 
 ### Tab
 #### Props
@@ -93,6 +100,11 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
 | hash | String | No | null | Unique hash fragment for easy boorkmark and navigation
 | end | Boolean | No | false | Push the tab and its following friends to the right
 | ghost | Boolean | No | false | Mark tab as a pure button
+
+#### Slots
+| Syntax (2.6.0+) | Props | Deprecated syntax
+|-------|-------|-------|
+| v-slot:nav="props" | { key: Number, class: Object, attrs: Object, on: Object } | slot="nav" slot-scope="props"
 
 
 ## Development & Testing

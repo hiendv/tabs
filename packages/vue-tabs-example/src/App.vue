@@ -57,11 +57,12 @@
             </tab>
 
             <tab hash="fred">
-              <a
-                slot="nav"
-                slot-scope="data" href="#"
-                :class="data.class" @click.prevent="click($event, data.on.click)"
-              ><octicon :icon="star" /> <span>Fred</span></a>
+              <template v-slot:nav="data">
+                <a
+                  href="#" :class="data.class"
+                  @click.prevent="click($event, data.on.click)"
+                ><octicon :icon="star" /> <span>Fred</span></a>
+              </template>
 
               <p>I'm kinda different because I extend the default click event 😂.</p>
               <p>See the <code>console</code> for easter eggs.</p>
