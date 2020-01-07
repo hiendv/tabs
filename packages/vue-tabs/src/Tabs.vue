@@ -81,11 +81,13 @@ export default {
       handler (val) {
         this.active = val
       }
+    },
+    items () {
+      this.syncActiveHash()
     }
   },
   created () {
     this.loadSlots()
-    this.syncActiveHash()
   },
   updated () {
     // Because $slots is not reactive we need these below lines for hot-reloading

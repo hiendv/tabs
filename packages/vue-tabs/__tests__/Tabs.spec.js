@@ -125,7 +125,7 @@ describe('Tabs', () => {
     })
   })
 
-  it('renders with hashes', () => {
+  it('renders with hashes', async () => {
     setHash('two')
 
     const wrapper = mount(Tabs, {
@@ -138,6 +138,7 @@ describe('Tabs', () => {
       localVue
     })
 
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     wrapper.find('a').trigger('click')
     expect(window.location.hash).toEqual('#one')
