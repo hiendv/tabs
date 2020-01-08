@@ -265,6 +265,7 @@ export default {
       this.activeTheme = i
     },
     click (e, next) {
+      /* eslint-disable no-console */
       console.group('🤖: Beep boop')
       console.log('❗', 'You clicked the tab item')
       console.log('❗', 'I\'m sending the event away')
@@ -272,6 +273,7 @@ export default {
       console.log('❗', 'Your tab should be on by now')
       console.log('❗', 'GL & HF')
       console.groupEnd()
+      /* eslint-enable */
     }
   }
 }
