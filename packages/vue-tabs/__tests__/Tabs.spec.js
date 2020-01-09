@@ -46,6 +46,11 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  it('renders without slots but kept alive', () => {
+    const wrapper = mount(Tabs, { stubs: { transition: transitionStub() }, propsData: { keepAlive: true } })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('renders with custom theme', () => {
     const wrapper = mount(Tabs, {
       propsData: {

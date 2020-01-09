@@ -209,3 +209,10 @@ exports[`Tabs renders without slots 1`] = `
   <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
 </div>
 `;
+
+exports[`Tabs renders without slots but kept alive 1`] = `
+<div class="tabs">
+  <nav class="items"></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
+</div>
+`;
