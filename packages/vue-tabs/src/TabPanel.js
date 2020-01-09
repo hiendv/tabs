@@ -1,7 +1,7 @@
 import { deepmerge } from '@hiendv/tabs'
 
 export default {
-  name: 'Tab',
+  name: 'TabPanel',
   functional: true,
   props: {
     item: {

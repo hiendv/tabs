@@ -1,5 +1,5 @@
 export default {
-  name: 'Tab',
+  name: 'TabPanelStateful',
   props: {
     item: {
       type: Object,
