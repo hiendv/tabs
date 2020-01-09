@@ -19,7 +19,14 @@
       tag="div" name="slide-down"
       mode="out-in"
     >
+      <keep-alive v-if="keepAlive" :max="5">
+        <tab-panel-stateful
+          :key="active" :class="theme.panel"
+          :item="activePanel"
+        />
+      </keep-alive>
       <tab-panel
+        v-else
         :key="active" :class="theme.panel"
         :item="activePanel"
       />
@@ -33,8 +40,10 @@
 import { setHash, themeDefault } from '@hiendv/tabs'
 import TabItem from './TabItem'
 import TabPanel from './TabPanel'
+import TabPanelStateful from './TabPanelStateful'
+
 export default {
-  components: { TabItem, TabPanel },
+  components: { TabItem, TabPanel, TabPanelStateful },
   props: {
     theme: {
       type: Object,
@@ -45,6 +54,10 @@ export default {
     show: {
       type: Number,
       default: 0
+    },
+    keepAlive: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

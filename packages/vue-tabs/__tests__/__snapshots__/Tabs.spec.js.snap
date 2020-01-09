@@ -162,6 +162,38 @@ exports[`Tabs renders with individual custom navigation without using data 2`] =
 </div>
 `;
 
+exports[`Tabs renders with keep-alive 1`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">One</div>
+</div>
+`;
+
+exports[`Tabs renders with keep-alive 2`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <p>Two</p>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with keep-alive 3`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">One</div>
+</div>
+`;
+
+exports[`Tabs renders with keep-alive 4`] = `
+<div class="tabs">
+  <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
+  <div class="panel" tag="div" name="slide-down" mode="out-in">
+    <p>Two</p>
+  </div>
+</div>
+`;
+
 exports[`Tabs renders with panel custom bindings 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>

@@ -71,6 +71,7 @@ Please see **[vue-tabs-example](/packages/vue-tabs-example)** for a complete dem
 |-------|-------|-------|-------|-------|
 | theme | Object | No | themeDefault - *[@hiendv/tabs](https://github.com/hiendv/tabs/tree/master/packages/tabs)* | Modulized style
 | show | Number | No | 0 | Initial active tab
+| keep-alive | Boolean | No | false | Keep the tab panel's state *(New in 0.3.4+)*
 
 
 #### Methods

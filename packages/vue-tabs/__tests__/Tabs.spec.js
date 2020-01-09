@@ -298,4 +298,46 @@ describe('Tabs', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.emitted()['update:show']).toBeFalsy()
   })
+
+  it('renders with keep-alive', async () => {
+    const render = jest.fn(h => {
+      return h('p', 'Two')
+    })
+
+    const comp = {
+      render
+    }
+
+    const wrapper = mount(Tabs, {
+      propsData: {
+        keepAlive: true
+      },
+      slots: {
+        default: `
+          <tab title="One">One</tab>
+          <tab title="Two"><comp /></tab>
+        `
+      },
+      stubs: {
+        comp
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(0).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+
+    expect(render.mock.calls.length).toBe(1)
+  })
 })
