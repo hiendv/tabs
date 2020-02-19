@@ -345,4 +345,63 @@ describe('Tabs', () => {
 
     expect(render.mock.calls.length).toBe(1)
   })
+
+  it('holds', async () => {
+    const wrapper = mount(Tabs, {
+      propsData: {
+        hold: true
+      },
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.emitted()['update:show']).toBeFalsy()
+  })
+
+  it('holds with condition', async () => {
+    const wrapper = mount(Tabs, {
+      propsData: {
+        hold (item, index) {
+          return index % 2 === 1
+        }
+      },
+      slots: {
+        default: `
+          <tab title="One"><div>One Content</div></tab>
+          <tab title="Two"><div>Two Content</div></tab>
+        `
+      },
+      localVue
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(0).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(1).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+
+    wrapper.findAll('.item').at(0).trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.html()).toMatchSnapshot()
+
+    expect(wrapper.emitted()['update:show']).toStrictEqual([[0], [0]])
+  })
 })

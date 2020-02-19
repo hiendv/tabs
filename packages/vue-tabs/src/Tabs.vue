@@ -58,6 +58,10 @@ export default {
     keepAlive: {
       type: Boolean,
       default: false
+    },
+    hold: {
+      type: [Boolean, Function],
+      default: false
     }
   },
   data () {
@@ -122,6 +126,14 @@ export default {
     itemClicked (index) {
       const item = this.items[index]
       if (item.ghost) {
+        return
+      }
+
+      if (typeof this.hold === 'boolean' && this.hold) {
+        return
+      }
+
+      if (typeof this.hold === 'function' && this.hold(item, index)) {
         return
       }
 
