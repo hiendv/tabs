@@ -1,7 +1,7 @@
 {
   "name": "@hiendv/react-tabs",
   "description": "Tabs component for React.js",
-  "version": "0.3.5",
+  "version": "0.3.7",
   "main": "dist/common.js",
   "module": "dist/es.js",
   "author": "Theodore Kluge",
@@ -10,7 +10,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@hiendv/tabs": "^0.3.0",
+    "@hiendv/tabs": "^0.3.7",
     "classnames": "^2.2.6",
     "octicons-react": "^1.0.1"
   },
