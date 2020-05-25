@@ -1,7 +1,7 @@
 {
   "name": "@hiendv/react-tabs",
   "description": "Tabs component for React.js",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "main": "dist/common.js",
   "module": "dist/es.js",
   "author": "Theodore Kluge",
