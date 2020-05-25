@@ -3,176 +3,216 @@
 exports[`Tabs holds 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs holds 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs holds with condition 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs holds with condition 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs holds with condition 3`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs holds with condition 4`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs holds with condition 5`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders <tab> without slots 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">Title</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel"></div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders <tab> without slots 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">Title</a><a href="#" class="item item--active">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in"></div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel"></div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>Two Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>Two Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders end <tab> 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item item--end">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders end <tab> 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active item--end">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>Two Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>Two Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders ghost <tab> 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><a href="#" class="item">Ghost</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders ghost <tab> 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><a href="#" class="item">Ghost</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with custom navigation 1`] = `
 <div class="tabs">
   <div><a>One</a><a>Two</a></div>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>Two Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>Two Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with custom navigation 2`] = `
 <div class="tabs">
   <div><a>One</a><a>Two</a></div>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with custom theme 1`] = `
 <div class="one">
   <nav class="two"><a href="#" class="three three--active">One</a><a href="#" class="three">Two</a></nav>
-  <div class="four" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="four">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with hashes 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>Two Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>Two Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with hashes from vue-router 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><a href="#" class="item">Three</a><a href="#" class="item">Four</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
@@ -183,86 +223,106 @@ exports[`Tabs renders with icons 1`] = `
       </svg> <span>One</span></a><a href="#" class="item"><svg version="1.1" width="10" height="16" viewBox="0 0 10 16" aria-hidden="true" class="octicon octicon-zap octicon">
         <path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path>
       </svg> <span>Two</span></a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with individual custom navigation 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button class="item">Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with individual custom navigation 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">One</a><a href="#" class="item">Two</a><button class="item item--active">Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>Three Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>Three Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with individual custom navigation without using data 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with individual custom navigation without using data 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a><button>Foobar</button></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with keep-alive 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">One</div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">One</div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with keep-alive 2`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <p>Two</p>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <p>Two</p>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with keep-alive 3`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">One</div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">One</div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with keep-alive 4`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item">One</a><a href="#" class="item item--active">Two</a></nav>
-  <div class="panel" tag="div" name="slide-down" mode="out-in">
-    <p>Two</p>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="panel">
+      <p>Two</p>
+    </div>
+  </transition-stub>
 </div>
 `;
 
 exports[`Tabs renders with panel custom bindings 1`] = `
 <div class="tabs">
   <nav class="items"><a href="#" class="item item--active">One</a><a href="#" class="item">Two</a></nav>
-  <div class="foobar panel" style="background-color: rgb(245, 245, 245);" tag="div" name="slide-down" mode="out-in">
-    <div>One Content</div>
-  </div>
+  <transition-stub tag="div" name="slide-down" mode="out-in">
+    <div class="foobar panel" style="background-color: rgb(245, 245, 245);">
+      <div>One Content</div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
