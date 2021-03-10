@@ -1,7 +1,7 @@
 import path from 'path'
-import commonjs from 'rollup-plugin-commonjs'
-import resolve from 'rollup-plugin-node-resolve'
-import buble from 'rollup-plugin-buble'
+import commonjs from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
+import buble from '@rollup/plugin-buble'
 import postcss from 'rollup-plugin-postcss'
 
 const reslv = p => {
