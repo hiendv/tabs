@@ -44,6 +44,11 @@ import TabPanelStateful from './TabPanelStateful'
 
 export default {
   components: { TabItem, TabPanel, TabPanelStateful },
+  provide () {
+    return {
+      theme: this.theme
+    }
+  },
   props: {
     theme: {
       type: Object,
@@ -68,11 +73,6 @@ export default {
     return {
       active: 0,
       slots: []
-    }
-  },
-  provide () {
-    return {
-      theme: this.theme
     }
   },
   computed: {

@@ -1,11 +1,10 @@
 <script>
 import Prism from 'prismjs/components/prism-core.js'
-
-require('prismjs/components/prism-markup.js')
-require('prismjs/components/prism-clike.js')
-require('prismjs/components/prism-javascript.js')
-require('prismjs/components/prism-bash.js')
-require('prismjs/components/prism-css.js')
+import 'prismjs/components/prism-markup.js'
+import 'prismjs/components/prism-clike.js'
+import 'prismjs/components/prism-javascript.js'
+import 'prismjs/components/prism-bash.js'
+import 'prismjs/components/prism-css.js'
 
 export default {
   functional: true,

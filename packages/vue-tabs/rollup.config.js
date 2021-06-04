@@ -51,7 +51,17 @@ export default [
       postcss({
         modules: {
           generateScopedName: '[name]__[local]'
-        }
+        },
+        use: [
+          [
+            'sass',
+            {
+              includePaths: [
+                reslv('../../node_modules')
+              ]
+            }
+          ]
+        ]
       }),
       vue({
         style: {

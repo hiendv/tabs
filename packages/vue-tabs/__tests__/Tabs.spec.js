@@ -13,8 +13,8 @@ const transitionStub = () => ({
 
 beforeAll(() => {
   localVue = createLocalVue()
-  localVue.component('tab', Tab)
-  localVue.component('transition', transitionStub())
+  localVue.component('Tab', Tab)
+  localVue.component('Transition', transitionStub())
 })
 
 afterAll(() => {

@@ -1,13 +1,14 @@
 language: node_js
 node_js:
   - lts/dubnium
-  - 11
   - lts/erbium
+  - lts/fermium
+  - v15
   - node
 install:
-  - npm install -g npm codecov
-  - npm ci
-  - npm run setup -- --ci
+  - yarn global add codecov
+  - yarn
+  - yarn setup --ci
 script:
-  - npm run test-ci
+  - yarn test-ci
   - codecov

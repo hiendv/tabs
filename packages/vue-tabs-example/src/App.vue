@@ -57,7 +57,7 @@
             </tab>
 
             <tab hash="fred">
-              <template v-slot:nav="data">
+              <template #nav="data">
                 <a
                   href="#" :class="data.class"
                   @click.prevent="click($event, data.on.click)"
@@ -148,7 +148,7 @@
         <h3>Custom navigation</h3>
         <div style="background-color: #fff; padding: 1rem">
           <tabs :show.sync="show" class="my-tabs">
-            <template v-slot:nav="{ items }">
+            <template #nav="{ items }">
               <div class="my-items">
                 <a
                   v-for="(item, index) in items" :key="index"

@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@hiendv/vue-tabs": "^0.3.10",
-    "core-js": "^3.9.1",
-    "vue": "^2.6.12"
+    "core-js": "^3.13.1",
+    "vue": "^2.6.13"
   },
   "postcss": {
     "plugins": {
@@ -15,8 +15,5 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ],
-  "vuePlugins": {
-    "resolveFrom": "../../"
-  }
+  ]
 }

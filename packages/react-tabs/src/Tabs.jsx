@@ -123,11 +123,13 @@ export default class Tabs extends React.Component {
                   key={i}
                   href={item.hash || '#'}
                   onClick={(e) => this.handleClick(e, i)}>
-                  {item && item.icon && item.icon.attrs() ? (
+                  {item && item.icon && item.icon.attrs()
+                    ? (
                     <React.Fragment>
                       <Octicon icon={item.icon} className={theme.octicon}/> {item.title}
                     </React.Fragment>
-                  ) : item.title
+                      )
+                    : item.title
                   }
                 </a>
               ))
